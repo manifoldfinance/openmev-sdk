@@ -1,3 +1,7 @@
 network
 .github/
 test/
+.repo/
+docs/
+types/
+

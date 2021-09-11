@@ -37,6 +37,8 @@ export function systemConfigIdToJSON(object: SystemConfigId): string {
   }
 }
 
+// @TODO add additional SourceIds
+//    openmev, keeper, secret
 export enum BundleSourceId {
   BATCH_BUNDLER = 0,
   KDB = 1,
@@ -1621,6 +1623,7 @@ function longToNumber(long: Long): number {
 
 // If you get a compile-error about 'Constructor<Long> and ... have no overlap',
 // add '--ts_proto_opt=esModuleInterop=true' as a flag when calling 'protoc'.
+// @ts-ignore 
 if (util.Long !== Long) {
   util.Long = Long as any;
   configure();
