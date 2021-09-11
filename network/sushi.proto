@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.manifoldfinance.protobuf.sushiswap;
+
+option java_multiple_files = true;
+option cc_enable_arenas = true;
+
+message SushiLiquidity {
+  int64 id = 1;
+  string contract_address = 2;
+  int32 base_decimals = 3;
+  string base_reserve = 4;
+  int32 quote_decimals = 5;
+  string quote_reserve = 6;
+  int64 block_timestamp = 7;
+}
+
+message BlockSushiLiquidity {
+  string block_number = 1;
+  repeated SushiLiquidity liquidity = 2;
+}

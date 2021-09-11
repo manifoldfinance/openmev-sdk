@@ -1,0 +1,11 @@
+package-lock.json merge=npm-merge-driver
+
+/.github            export-ignore
+/.editorconfig      export-ignore
+/.gitattributes     export-ignore
+/.gitignore         export-ignore
+
+
+*.sh     eol=lf
+*.bash   eol=lf
+LICENSE* text

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package com.manifoldfinance.protobuf.gas;
+
+option java_multiple_files = true;
+option cc_enable_arenas = true;
+
+message EstimatedGasPrice {
+  int32 confidence = 1;
+  int32 price = 2;
+  float maxPriorityFeePerGas = 3;
+  float maxFeePerGas = 4;
+}
+
+message BlockPrice {
+  string block_number = 1;   // hex encoded
+  int32 estimated_transaction_count = 2;
+  int64 baseFeePerGas = 3;
+  repeated EstimatedGasPrice estimated_prices = 10;
+}
+
+message GasPrices {
+
+  string system = 1;
+  string network = 2;
+  string unit = 3;
+  int32 max_price = 4;
+  string current_block_number = 5;  // hex encoded
+  int32 ms_since_last_block = 6;
+
+  repeated BlockPrice block_prices = 10;
+}

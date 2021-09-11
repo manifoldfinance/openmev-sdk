@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.manifoldfinance.protobuf.uniswap;
+
+option java_multiple_files = true;
+option cc_enable_arenas = true;
+
+message UniLiquidity {
+  int64 id = 1;
+  string contract_address = 2;
+  int32 base_decimals = 3;
+  string base_reserve = 4;
+  int32 quote_decimals = 5;
+  string quote_reserve = 6;
+  int64 block_timestamp = 7;
+}
+
+message BlockUniLiquidity {
+  string block_number = 1;
+  repeated UniLiquidity liquidity = 2;
+}
