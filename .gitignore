@@ -3,6 +3,11 @@ file-uploads/
 file-cache/
 .DS_Store
 node_modules
+_dev/
+_workspace/
+_attic/
+network/_dev/
+
 ##############################
 ## Java
 ##############################
