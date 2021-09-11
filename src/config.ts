@@ -1,8 +1,15 @@
 /* eslint-disable */
+
+/**
+* @file OpenMEV SDK Configuration
+* @version 0.1.0
+* @copyright Manifold Finance, Inc. 2021
+* @package openmev-sdk
+*/
+
 import { util, configure, Writer, Reader } from "protobufjs/minimal";
 import * as Long from "long";
 
-export const protobufPackage = "com.manifoldfinance.protobuf.config";
 
 export enum SystemConfigId {
   CONFIG_MINER_RELAY = 0,

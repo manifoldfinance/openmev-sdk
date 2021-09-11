@@ -1,8 +1,14 @@
 /* eslint-disable */
+
+/**
+* @file UniSwap Integration
+* @version 0.1.0
+* @copyright Manifold Finance, Inc. 2021
+* @package openmev-sdk
+*/
+
 import { util, configure, Writer, Reader } from "protobufjs/minimal";
 import * as Long from "long";
-
-export const protobufPackage = "com.manifoldfinance.protobuf.uniswap";
 
 export interface UniLiquidity {
   id: number;

@@ -1,4 +1,12 @@
 /* eslint-disable */
+
+/**
+* @file OpenMEV SDK Protobufs
+* @version 0.1.0
+* @copyright Manifold Finance, Inc. 2021
+* @package openmev-sdk
+*/
+
 import { util, configure, Writer, Reader } from "protobufjs/minimal";
 import * as Long from "long";
 
