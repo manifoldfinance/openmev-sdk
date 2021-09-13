@@ -1,0 +1,25 @@
+{
+  "name": "@openmev/sushiswap",
+  "version": "0.1.0",
+  "description": "sushiswap",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git"
+  },
+  "keywords": [
+    "sushiswap",
+    "ethereum",
+    "defi"
+  ],
+  "author": "sam bacha",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/openmev-sdk/issues"
+  },
+  "homepage": "https://github.com/manifoldfinance/openmev-sdk#readme"
+}
