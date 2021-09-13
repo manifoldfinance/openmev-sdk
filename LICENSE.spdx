@@ -1,0 +1,6 @@
+SPDXVersion: SPDX-2.0
+Creator: ManifoldFinance
+PackageName: @openmev/sdk
+PackageOriginator: ManifoldFinance
+PackageHomePage: https://github.com/manifoldfinance/openmev-sdk
+PackageLicenseDeclared: MPL-2.0
