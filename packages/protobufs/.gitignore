@@ -1,4 +1,6 @@
 # -*- mode: gitignore; -*-
+*.ts
+*.js
 file-uploads/
 file-cache/
 .DS_Store

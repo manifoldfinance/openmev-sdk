@@ -1,0 +1,12 @@
+dist/
+build/
+*.min.js
+*.js
+output/
+dist-types/
+types/
+*.css
+*.html
+docs/
+*.svg
+*.png
