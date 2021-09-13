@@ -1,6 +1,11 @@
 {
   "name": "openmev-manifold",
   "private": true,
+  "scripts": {
+    "build": "npx obo bootstrap",
+    "check": "npx oao status",
+    "lint": "npx prettier --config .prettierrc.json --write . "
+  },
   "version": "0.0.0",
   "workspaces": [
     "packages/*"
