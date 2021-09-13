@@ -1,6 +1,10 @@
 # @openmev/sdk
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c4566fcdc50a49eba6e07264443bd5c0)](https://www.codacy.com/gh/manifoldfinance/openmev-sdk/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=manifoldfinance/openmev-sdk&amp;utm_campaign=Badge_Grade)
+
+
 > [docs.openmev.org](https://docs.openmev.org)
+
 
 ## Overview
 

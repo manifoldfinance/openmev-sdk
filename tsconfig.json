@@ -23,7 +23,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": "./"
   },
     "include": ["source"],
     "exclude": ["build", "typechain", "node_modules", "network", "test"]
