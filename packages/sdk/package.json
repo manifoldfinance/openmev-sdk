@@ -10,7 +10,8 @@
     "build:cjs": "npx tse build src/index.ts --emit-types --ext .cjs.js",
     "build:esm": "npx tse build src/index.ts --emit-types --ext .esm.js --output esm",
     "lint": "npx tse lint .",
-    "test": "npx tse test --coverage"
+    "test": "npx tse test --coverage",
+    "gen-index": "npx ctix create tsconfig.json"
   },
   "keywords": [
     "ethereum",
@@ -32,6 +33,7 @@
     "@ts-engine/cli": "^2.0.0",
     "@types/long": "^4.0.1",
     "@types/node": "^14.17.15",
+    "ctix": "^0.3.1",
     "grpc-tools": "^1.11.2",
     "jsbi": "^3.2.4",
     "long": "^4.0.0",
