@@ -1,6 +1,10 @@
 # @openmev/sdk
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c4566fcdc50a49eba6e07264443bd5c0)](https://www.codacy.com/gh/manifoldfinance/openmev-sdk/dashboard?utm_source=github.com&utm_medium=referral&utm_content=manifoldfinance/openmev-sdk&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c4566fcdc50a49eba6e07264443bd5c0)](https://www.codacy.com/gh/manifoldfinance/openmev-sdk/dashboard?utm_source=github.com&utm_medium=referral&utm_content=manifoldfinance/openmev-sdk&utm_campaign=Badge_Grade) [![nodejs](https://github.com/manifoldfinance/openmev-sdk/workflows/nodejs/badge.svg)](https://github.com/manifoldfinance/openmev-sdk/actions?query=workflow:"nodejs")
+[![GitHub tag](https://img.shields.io/github/tag/manifoldfinance/openmev-sdk?include_prereleases=&sort=semver)](https://github.com/manifoldfinance/openmev-sdk/releases/)
+[![License](https://img.shields.io/badge/spdx-apache--2.0-informational)](#license)
+[![issues - openmev-sdk](https://img.shields.io/github/issues/manifoldfinance/openmev-sdk)](https://github.com/manifoldfinance/openmev-sdk/issues)
+
 
 > [docs.openmev.org](https://docs.openmev.org)
 
@@ -69,6 +73,10 @@ This file does something and its purpose is to do abc.
 | Security         | reports@manifoldfinance.com |
 
 ## Licenses
+
+## License
+
+Released under [MIT](/LICENSE) by [@manifoldfinance](https://github.com/manifoldfinance).
 
 SPDX-License-Identifier: Apache-2.0
 
