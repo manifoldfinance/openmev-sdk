@@ -1,0 +1,25 @@
+{
+  "name": "@openmev/graphql",
+  "version": "0.0.0",
+  "description": "OpenMEV SDK",
+  "files": ["src/*", "schemas/*"],
+  "scripts": {
+  },
+  "keywords": [
+    "ethereum",
+    "defi",
+    "solidity",
+    "sdk",
+    "mev",
+    "blockchain"
+  ],
+  "author": "Manifold Finance, Inc <janitor@manifoldfinance.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git",
+    "directory": "packages/graphql"
+  },
+  "devDependencies": {
+  }
+}

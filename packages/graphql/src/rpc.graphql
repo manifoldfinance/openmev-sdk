@@ -1,0 +1,309 @@
+type TransactionHash {
+  transactionHash: String
+}
+type SendTransactionKey {
+  signerAddress: String
+  transactionHash: String
+}
+type SendTransaction {
+  signerAddress: String
+  receivedAt: Int
+  deadlineAt: Int
+  transaction: eth_Transaction
+  action: SendTransaction_action
+}
+union SendTransaction_action = action_SwapExactTokensForTokens | action_SwapTokensForExactTokens | action_SwapExactETHForTokens | action_SwapTokensForExactETH | action_SwapExactTokensForETH | action_SwapETHForExactTokens | action_SwapExactTokensForTokensSupportingFeeOnTransferTokens | action_SwapExactETHForTokensSupportingFeeOnTransferTokens | action_SwapExactTokensForETHSupportingFeeOnTransferTokens
+type eth_AccountKey {
+  address: String
+}
+type eth_Account {
+  balance: String
+  _nonce: eth_Account__nonce
+  _codeHash: eth_Account__codeHash
+  _storageRoot: eth_Account__storageRoot
+}
+union eth_Account__nonce = String
+union eth_Account__codeHash = String
+union eth_Account__storageRoot = String
+type eth_AccountBalanceKey {
+  blockNumber: String
+  address: String
+}
+type eth_AccountBalance {
+  address: String
+  _nonce: eth_AccountBalance__nonce
+  ether: String
+  _isExternallyOwned: eth_AccountBalance__isExternallyOwned
+  tokenBalances: [eth_TokenBalance]
+}
+union eth_AccountBalance__nonce = String
+union eth_AccountBalance__isExternallyOwned = Boolean
+type eth_BlockAccountBalances {
+  blockNumber: String
+  balances: [eth_AccountBalance]
+}
+type eth_BalanceCheck {
+  account: String
+  tokens: [String]
+}
+type eth_Block {
+  header: eth_BlockHeader
+  transactions: [eth_Transaction]
+}
+type eth_BlockHeader {
+  blockNumber: String
+  blockHash: String
+  parentHash: String
+  mixHash: String
+  sha3Uncles: String
+  logsBloom: String
+  transactionsRoot: String
+  stateRoot: String
+  receiptsRoot: String
+  miner: String
+  difficulty: String
+  totalDifficulty: String
+  extraData: String
+  size: Int
+  gasLimit: Int
+  gasUsed: Int
+  timestamp: Int
+  _nonce: eth_BlockHeader__nonce
+  _author: eth_BlockHeader__author
+  uncles: [String]
+  sealFields: [String]
+  transactions: [String]
+  _baseFeePerGas: eth_BlockHeader__baseFeePerGas
+}
+union eth_BlockHeader__nonce = String
+union eth_BlockHeader__author = String
+union eth_BlockHeader__baseFeePerGas = String
+type eth_BlockHash {
+  blockHash: String
+}
+type eth_BlockNumber {
+  blockNumber: String
+}
+type eth_BlockReceipts {
+  blockNumber: String
+  receipts: [eth_TransactionReceipt]
+}
+type eth_TokenBalanceKey {
+  blockNumber: String
+  address: String
+  tokenAddress: String
+}
+type eth_TokenBalance {
+  tokenAddress: String
+  balance: String
+}
+type eth_TransactionKey {
+  transactionHash: String
+  transactionIndex: Int
+}
+type eth_FrontierTransaction {
+  value: String
+  input: String
+  nonce: Int
+  gasPrice: String
+  gasLimit: Int
+  _v: eth_FrontierTransaction__v
+  _r: eth_FrontierTransaction__r
+  _s: eth_FrontierTransaction__s
+  _to: eth_FrontierTransaction__to
+  _chainId: eth_FrontierTransaction__chainId
+  _sender: eth_FrontierTransaction__sender
+}
+union eth_FrontierTransaction__v = String
+union eth_FrontierTransaction__r = String
+union eth_FrontierTransaction__s = String
+union eth_FrontierTransaction__to = String
+union eth_FrontierTransaction__chainId = String
+union eth_FrontierTransaction__sender = String
+type eth_AccessListEntry {
+  address: String
+  storageKeys: [String]
+}
+type eth_EIP2930Transaction {
+  chainId: String
+  value: String
+  input: String
+  nonce: Int
+  gasPrice: String
+  gasLimit: Int
+  accessList: [eth_AccessListEntry]
+  _v: eth_EIP2930Transaction__v
+  _r: eth_EIP2930Transaction__r
+  _s: eth_EIP2930Transaction__s
+  _to: eth_EIP2930Transaction__to
+  _sender: eth_EIP2930Transaction__sender
+}
+union eth_EIP2930Transaction__v = Int
+union eth_EIP2930Transaction__r = String
+union eth_EIP2930Transaction__s = String
+union eth_EIP2930Transaction__to = String
+union eth_EIP2930Transaction__sender = String
+type eth_EIP1559Transaction {
+  chainId: String
+  value: String
+  input: String
+  nonce: Int
+  maxPriorityFeePerGas: String
+  maxFeePerGas: String
+  gasLimit: Int
+  accessList: [eth_AccessListEntry]
+  _v: eth_EIP1559Transaction__v
+  _r: eth_EIP1559Transaction__r
+  _s: eth_EIP1559Transaction__s
+  _to: eth_EIP1559Transaction__to
+  _sender: eth_EIP1559Transaction__sender
+}
+union eth_EIP1559Transaction__v = Int
+union eth_EIP1559Transaction__r = String
+union eth_EIP1559Transaction__s = String
+union eth_EIP1559Transaction__to = String
+union eth_EIP1559Transaction__sender = String
+enum eth_TransactionType {
+  FRONTIER
+  EIP2930
+  EIP1559
+}
+type eth_Transaction {
+  type: eth_TransactionType
+  _signed: eth_Transaction__signed
+  _deadlineAt: eth_Transaction__deadlineAt
+  _transactionHash: eth_Transaction__transactionHash
+  _transactionIndex: eth_Transaction__transactionIndex
+  _blockHash: eth_Transaction__blockHash
+  _blockNumber: eth_Transaction__blockNumber
+  _gasPrice: eth_Transaction__gasPrice
+  _receipt: eth_Transaction__receipt
+  payload: eth_Transaction_payload
+  action: eth_Transaction_action
+}
+union eth_Transaction__signed = String
+union eth_Transaction__deadlineAt = Int
+union eth_Transaction__transactionHash = String
+union eth_Transaction__transactionIndex = Int
+union eth_Transaction__blockHash = String
+union eth_Transaction__blockNumber = String
+union eth_Transaction__gasPrice = String
+union eth_Transaction__receipt = eth_TransactionReceipt
+union eth_Transaction_payload = eth_FrontierTransaction | eth_EIP2930Transaction | eth_EIP1559Transaction
+union eth_Transaction_action = action_SwapExactTokensForTokens | action_SwapTokensForExactTokens | action_SwapExactETHForTokens | action_SwapTokensForExactETH | action_SwapExactTokensForETH | action_SwapETHForExactTokens | action_SwapExactTokensForTokensSupportingFeeOnTransferTokens | action_SwapExactETHForTokensSupportingFeeOnTransferTokens | action_SwapExactTokensForETHSupportingFeeOnTransferTokens
+type eth_TransactionLogKey {
+  transactionHash: String
+  transactionIndex: Int
+  transactionLogIndex: Int
+}
+type eth_TransactionLog {
+  address: String
+  data: String
+  transactionLogIndex: Int
+  transactionIndex: Int
+  transactionHash: String
+  blockHash: String
+  blockNumber: String
+  removed: Boolean
+  topics: [String]
+}
+type eth_TransactionReceipt {
+  status: Boolean
+  blockHash: String
+  blockNumber: String
+  transactionHash: String
+  transactionIndex: Int
+  from: String
+  cumulativeGasUsed: Int
+  gasUsed: Int
+  logsBloom: String
+  logs: [eth_TransactionLog]
+  _error: eth_TransactionReceipt__error
+  _type: eth_TransactionReceipt__type
+  _to: eth_TransactionReceipt__to
+  _contractAddress: eth_TransactionReceipt__contractAddress
+}
+union eth_TransactionReceipt__error = String
+union eth_TransactionReceipt__type = String
+union eth_TransactionReceipt__to = String
+union eth_TransactionReceipt__contractAddress = String
+type action_ERC20Transfer {
+  recipient: String
+  amount: String
+}
+type action_ERC20Approval {
+  spender: String
+  amount: String
+}
+type action_SwapExactTokensForTokens {
+  amountIn: String
+  amountOutMin: String
+  to: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapTokensForExactTokens {
+  amountOut: String
+  amountInMax: String
+  to: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapExactETHForTokens {
+  amountOutMin: String
+  to: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapTokensForExactETH {
+  amountOut: String
+  amountInMax: String
+  to: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapExactTokensForETH {
+  amountIn: String
+  amountOutMin: String
+  to: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapETHForExactTokens {
+  amountOut: String
+  to: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapExactTokensForTokensSupportingFeeOnTransferTokens {
+  amountIn: String
+  amountOutMin: String
+  to: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapExactETHForTokensSupportingFeeOnTransferTokens {
+  amountOutMin: String
+  to: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapExactTokensForETHSupportingFeeOnTransferTokens {
+  amountIn: String
+  amountOutMin: String
+  to: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapExactTokensForTokensWithFlashloan {
+  router: String
+  amountIn: String
+  deadline: Int
+  path: [String]
+}
+type action_SwapExactTokensForTokensWithFlashloanMulti {
+  router: [String]
+  amountIn: String
+  deadline: Int
+  path: [String]
+}
