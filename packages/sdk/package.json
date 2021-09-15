@@ -12,7 +12,14 @@
     "lint": "npx tse lint .",
     "test": "npx tse test --coverage"
   },
-  "keywords": ["ethereum", "defi", "solidity", "sdk", "mev", "blockchain"],
+  "keywords": [
+    "ethereum",
+    "defi",
+    "solidity",
+    "sdk",
+    "mev",
+    "blockchain"
+  ],
   "author": "Manifold Finance, Inc <janitor@manifoldfinance.com>",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {

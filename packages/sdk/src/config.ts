@@ -1,15 +1,14 @@
 /* eslint-disable */
 
 /**
-* @file OpenMEV SDK Configuration
-* @version 0.1.0
-* @copyright Manifold Finance, Inc. 2021
-* @package openmev-sdk
-*/
+ * @file OpenMEV SDK Configuration
+ * @version 0.1.0
+ * @copyright Manifold Finance, Inc. 2021
+ * @package openmev-sdk
+ */
 
-import { util, configure, Writer, Reader } from "protobufjs/minimal";
-import * as Long from "long";
-
+import { util, configure, Writer, Reader } from 'protobufjs/minimal';
+import * as Long from 'long';
 
 export enum SystemConfigId {
   CONFIG_MINER_RELAY = 0,
@@ -19,10 +18,10 @@ export enum SystemConfigId {
 export function systemConfigIdFromJSON(object: any): SystemConfigId {
   switch (object) {
     case 0:
-    case "CONFIG_MINER_RELAY":
+    case 'CONFIG_MINER_RELAY':
       return SystemConfigId.CONFIG_MINER_RELAY;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return SystemConfigId.UNRECOGNIZED;
   }
@@ -31,9 +30,9 @@ export function systemConfigIdFromJSON(object: any): SystemConfigId {
 export function systemConfigIdToJSON(object: SystemConfigId): string {
   switch (object) {
     case SystemConfigId.CONFIG_MINER_RELAY:
-      return "CONFIG_MINER_RELAY";
+      return 'CONFIG_MINER_RELAY';
     default:
-      return "UNKNOWN";
+      return 'UNKNOWN';
   }
 }
 
@@ -48,13 +47,13 @@ export enum BundleSourceId {
 export function bundleSourceIdFromJSON(object: any): BundleSourceId {
   switch (object) {
     case 0:
-    case "BATCH_BUNDLER":
+    case 'BATCH_BUNDLER':
       return BundleSourceId.BATCH_BUNDLER;
     case 1:
-    case "KDB":
+    case 'KDB':
       return BundleSourceId.KDB;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return BundleSourceId.UNRECOGNIZED;
   }
@@ -63,11 +62,11 @@ export function bundleSourceIdFromJSON(object: any): BundleSourceId {
 export function bundleSourceIdToJSON(object: BundleSourceId): string {
   switch (object) {
     case BundleSourceId.BATCH_BUNDLER:
-      return "BATCH_BUNDLER";
+      return 'BATCH_BUNDLER';
     case BundleSourceId.KDB:
-      return "KDB";
+      return 'KDB';
     default:
-      return "UNKNOWN";
+      return 'UNKNOWN';
   }
 }
 
@@ -162,23 +161,23 @@ export interface UniLiquidityPair {
   validity: string;
 }
 
-const baseSystemConfig: object = { key: 0, value: "", validity: "" };
+const baseSystemConfig: object = { key: 0, value: '', validity: '' };
 
 export const SystemConfig = {
   encode(message: SystemConfig, writer: Writer = Writer.create()): Writer {
     if (message.key !== 0) {
       writer.uint32(8).int32(message.key);
     }
-    if (message.value !== "") {
+    if (message.value !== '') {
       writer.uint32(18).string(message.value);
     }
-    if (message.validity !== "") {
+    if (message.validity !== '') {
       writer.uint32(26).string(message.validity);
     }
     if (message.minerRelaySystemConfig !== undefined) {
       MinerRelaySystemConfig.encode(
         message.minerRelaySystemConfig,
-        writer.uint32(82).fork()
+        writer.uint32(82).fork(),
       ).ldelim();
     }
     return writer;
@@ -203,7 +202,7 @@ export const SystemConfig = {
         case 10:
           message.minerRelaySystemConfig = MinerRelaySystemConfig.decode(
             reader,
-            reader.uint32()
+            reader.uint32(),
           );
           break;
         default:
@@ -224,19 +223,19 @@ export const SystemConfig = {
     if (object.value !== undefined && object.value !== null) {
       message.value = String(object.value);
     } else {
-      message.value = "";
+      message.value = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = String(object.validity);
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     if (
       object.minerRelaySystemConfig !== undefined &&
       object.minerRelaySystemConfig !== null
     ) {
       message.minerRelaySystemConfig = MinerRelaySystemConfig.fromJSON(
-        object.minerRelaySystemConfig
+        object.minerRelaySystemConfig,
       );
     } else {
       message.minerRelaySystemConfig = undefined;
@@ -266,19 +265,19 @@ export const SystemConfig = {
     if (object.value !== undefined && object.value !== null) {
       message.value = object.value;
     } else {
-      message.value = "";
+      message.value = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = object.validity;
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     if (
       object.minerRelaySystemConfig !== undefined &&
       object.minerRelaySystemConfig !== null
     ) {
       message.minerRelaySystemConfig = MinerRelaySystemConfig.fromPartial(
-        object.minerRelaySystemConfig
+        object.minerRelaySystemConfig,
       );
     } else {
       message.minerRelaySystemConfig = undefined;
@@ -295,7 +294,7 @@ const baseMinerRelaySystemConfig: object = {
 export const MinerRelaySystemConfig = {
   encode(
     message: MinerRelaySystemConfig,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
     if (message.bundleRelayDisabled === true) {
       writer.uint32(8).bool(message.bundleRelayDisabled);
@@ -342,7 +341,7 @@ export const MinerRelaySystemConfig = {
       object.allowedBundleSourceId !== null
     ) {
       message.allowedBundleSourceId = bundleSourceIdFromJSON(
-        object.allowedBundleSourceId
+        object.allowedBundleSourceId,
       );
     } else {
       message.allowedBundleSourceId = 0;
@@ -356,13 +355,13 @@ export const MinerRelaySystemConfig = {
       (obj.bundleRelayDisabled = message.bundleRelayDisabled);
     message.allowedBundleSourceId !== undefined &&
       (obj.allowedBundleSourceId = bundleSourceIdToJSON(
-        message.allowedBundleSourceId
+        message.allowedBundleSourceId,
       ));
     return obj;
   },
 
   fromPartial(
-    object: DeepPartial<MinerRelaySystemConfig>
+    object: DeepPartial<MinerRelaySystemConfig>,
   ): MinerRelaySystemConfig {
     const message = { ...baseMinerRelaySystemConfig } as MinerRelaySystemConfig;
     if (
@@ -386,28 +385,28 @@ export const MinerRelaySystemConfig = {
 };
 
 const baseMarketContract: object = {
-  id: "",
-  name: "",
-  contractAddress: "",
-  factoryAddress: "",
-  codeHash: "",
+  id: '',
+  name: '',
+  contractAddress: '',
+  factoryAddress: '',
+  codeHash: '',
 };
 
 export const MarketContract = {
   encode(message: MarketContract, writer: Writer = Writer.create()): Writer {
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(10).string(message.id);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(18).string(message.name);
     }
-    if (message.contractAddress !== "") {
+    if (message.contractAddress !== '') {
       writer.uint32(26).string(message.contractAddress);
     }
-    if (message.factoryAddress !== "") {
+    if (message.factoryAddress !== '') {
       writer.uint32(34).string(message.factoryAddress);
     }
-    if (message.codeHash !== "") {
+    if (message.codeHash !== '') {
       writer.uint32(42).string(message.codeHash);
     }
     return writer;
@@ -448,12 +447,12 @@ export const MarketContract = {
     if (object.id !== undefined && object.id !== null) {
       message.id = String(object.id);
     } else {
-      message.id = "";
+      message.id = '';
     }
     if (object.name !== undefined && object.name !== null) {
       message.name = String(object.name);
     } else {
-      message.name = "";
+      message.name = '';
     }
     if (
       object.contractAddress !== undefined &&
@@ -461,17 +460,17 @@ export const MarketContract = {
     ) {
       message.contractAddress = String(object.contractAddress);
     } else {
-      message.contractAddress = "";
+      message.contractAddress = '';
     }
     if (object.factoryAddress !== undefined && object.factoryAddress !== null) {
       message.factoryAddress = String(object.factoryAddress);
     } else {
-      message.factoryAddress = "";
+      message.factoryAddress = '';
     }
     if (object.codeHash !== undefined && object.codeHash !== null) {
       message.codeHash = String(object.codeHash);
     } else {
-      message.codeHash = "";
+      message.codeHash = '';
     }
     return message;
   },
@@ -493,12 +492,12 @@ export const MarketContract = {
     if (object.id !== undefined && object.id !== null) {
       message.id = object.id;
     } else {
-      message.id = "";
+      message.id = '';
     }
     if (object.name !== undefined && object.name !== null) {
       message.name = object.name;
     } else {
-      message.name = "";
+      message.name = '';
     }
     if (
       object.contractAddress !== undefined &&
@@ -506,36 +505,36 @@ export const MarketContract = {
     ) {
       message.contractAddress = object.contractAddress;
     } else {
-      message.contractAddress = "";
+      message.contractAddress = '';
     }
     if (object.factoryAddress !== undefined && object.factoryAddress !== null) {
       message.factoryAddress = object.factoryAddress;
     } else {
-      message.factoryAddress = "";
+      message.factoryAddress = '';
     }
     if (object.codeHash !== undefined && object.codeHash !== null) {
       message.codeHash = object.codeHash;
     } else {
-      message.codeHash = "";
+      message.codeHash = '';
     }
     return message;
   },
 };
 
-const baseMiner: object = { id: "", url: "", bribeAddress: "", validity: "" };
+const baseMiner: object = { id: '', url: '', bribeAddress: '', validity: '' };
 
 export const Miner = {
   encode(message: Miner, writer: Writer = Writer.create()): Writer {
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(10).string(message.id);
     }
-    if (message.url !== "") {
+    if (message.url !== '') {
       writer.uint32(18).string(message.url);
     }
-    if (message.bribeAddress !== "") {
+    if (message.bribeAddress !== '') {
       writer.uint32(26).string(message.bribeAddress);
     }
-    if (message.validity !== "") {
+    if (message.validity !== '') {
       writer.uint32(34).string(message.validity);
     }
     return writer;
@@ -573,22 +572,22 @@ export const Miner = {
     if (object.id !== undefined && object.id !== null) {
       message.id = String(object.id);
     } else {
-      message.id = "";
+      message.id = '';
     }
     if (object.url !== undefined && object.url !== null) {
       message.url = String(object.url);
     } else {
-      message.url = "";
+      message.url = '';
     }
     if (object.bribeAddress !== undefined && object.bribeAddress !== null) {
       message.bribeAddress = String(object.bribeAddress);
     } else {
-      message.bribeAddress = "";
+      message.bribeAddress = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = String(object.validity);
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -608,38 +607,38 @@ export const Miner = {
     if (object.id !== undefined && object.id !== null) {
       message.id = object.id;
     } else {
-      message.id = "";
+      message.id = '';
     }
     if (object.url !== undefined && object.url !== null) {
       message.url = object.url;
     } else {
-      message.url = "";
+      message.url = '';
     }
     if (object.bribeAddress !== undefined && object.bribeAddress !== null) {
       message.bribeAddress = object.bribeAddress;
     } else {
-      message.bribeAddress = "";
+      message.bribeAddress = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = object.validity;
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
 };
 
-const baseSenderDeny: object = { signer: "", reason: "", validity: "" };
+const baseSenderDeny: object = { signer: '', reason: '', validity: '' };
 
 export const SenderDeny = {
   encode(message: SenderDeny, writer: Writer = Writer.create()): Writer {
-    if (message.signer !== "") {
+    if (message.signer !== '') {
       writer.uint32(10).string(message.signer);
     }
-    if (message.reason !== "") {
+    if (message.reason !== '') {
       writer.uint32(18).string(message.reason);
     }
-    if (message.validity !== "") {
+    if (message.validity !== '') {
       writer.uint32(26).string(message.validity);
     }
     return writer;
@@ -674,17 +673,17 @@ export const SenderDeny = {
     if (object.signer !== undefined && object.signer !== null) {
       message.signer = String(object.signer);
     } else {
-      message.signer = "";
+      message.signer = '';
     }
     if (object.reason !== undefined && object.reason !== null) {
       message.reason = String(object.reason);
     } else {
-      message.reason = "";
+      message.reason = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = String(object.validity);
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -702,33 +701,33 @@ export const SenderDeny = {
     if (object.signer !== undefined && object.signer !== null) {
       message.signer = object.signer;
     } else {
-      message.signer = "";
+      message.signer = '';
     }
     if (object.reason !== undefined && object.reason !== null) {
       message.reason = object.reason;
     } else {
-      message.reason = "";
+      message.reason = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = object.validity;
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
 };
 
-const baseSignerDeny: object = { sender: "", reason: "", validity: "" };
+const baseSignerDeny: object = { sender: '', reason: '', validity: '' };
 
 export const SignerDeny = {
   encode(message: SignerDeny, writer: Writer = Writer.create()): Writer {
-    if (message.sender !== "") {
+    if (message.sender !== '') {
       writer.uint32(10).string(message.sender);
     }
-    if (message.reason !== "") {
+    if (message.reason !== '') {
       writer.uint32(18).string(message.reason);
     }
-    if (message.validity !== "") {
+    if (message.validity !== '') {
       writer.uint32(26).string(message.validity);
     }
     return writer;
@@ -763,17 +762,17 @@ export const SignerDeny = {
     if (object.sender !== undefined && object.sender !== null) {
       message.sender = String(object.sender);
     } else {
-      message.sender = "";
+      message.sender = '';
     }
     if (object.reason !== undefined && object.reason !== null) {
       message.reason = String(object.reason);
     } else {
-      message.reason = "";
+      message.reason = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = String(object.validity);
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -791,33 +790,33 @@ export const SignerDeny = {
     if (object.sender !== undefined && object.sender !== null) {
       message.sender = object.sender;
     } else {
-      message.sender = "";
+      message.sender = '';
     }
     if (object.reason !== undefined && object.reason !== null) {
       message.reason = object.reason;
     } else {
-      message.reason = "";
+      message.reason = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = object.validity;
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
 };
 
-const baseSignerAllow: object = { sender: "", reason: "", validity: "" };
+const baseSignerAllow: object = { sender: '', reason: '', validity: '' };
 
 export const SignerAllow = {
   encode(message: SignerAllow, writer: Writer = Writer.create()): Writer {
-    if (message.sender !== "") {
+    if (message.sender !== '') {
       writer.uint32(10).string(message.sender);
     }
-    if (message.reason !== "") {
+    if (message.reason !== '') {
       writer.uint32(18).string(message.reason);
     }
-    if (message.validity !== "") {
+    if (message.validity !== '') {
       writer.uint32(26).string(message.validity);
     }
     return writer;
@@ -852,17 +851,17 @@ export const SignerAllow = {
     if (object.sender !== undefined && object.sender !== null) {
       message.sender = String(object.sender);
     } else {
-      message.sender = "";
+      message.sender = '';
     }
     if (object.reason !== undefined && object.reason !== null) {
       message.reason = String(object.reason);
     } else {
-      message.reason = "";
+      message.reason = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = String(object.validity);
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -880,41 +879,41 @@ export const SignerAllow = {
     if (object.sender !== undefined && object.sender !== null) {
       message.sender = object.sender;
     } else {
-      message.sender = "";
+      message.sender = '';
     }
     if (object.reason !== undefined && object.reason !== null) {
       message.reason = object.reason;
     } else {
-      message.reason = "";
+      message.reason = '';
     }
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = object.validity;
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
 };
 
 const basePlatformAccount: object = {
-  address: "",
-  name: "",
+  address: '',
+  name: '',
   isActive: false,
-  validity: "",
+  validity: '',
 };
 
 export const PlatformAccount = {
   encode(message: PlatformAccount, writer: Writer = Writer.create()): Writer {
-    if (message.address !== "") {
+    if (message.address !== '') {
       writer.uint32(10).string(message.address);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(18).string(message.name);
     }
     if (message.isActive === true) {
       writer.uint32(24).bool(message.isActive);
     }
-    if (message.validity !== "") {
+    if (message.validity !== '') {
       writer.uint32(34).string(message.validity);
     }
     if (message.aliasOf !== undefined) {
@@ -958,12 +957,12 @@ export const PlatformAccount = {
     if (object.address !== undefined && object.address !== null) {
       message.address = String(object.address);
     } else {
-      message.address = "";
+      message.address = '';
     }
     if (object.name !== undefined && object.name !== null) {
       message.name = String(object.name);
     } else {
-      message.name = "";
+      message.name = '';
     }
     if (object.isActive !== undefined && object.isActive !== null) {
       message.isActive = Boolean(object.isActive);
@@ -973,7 +972,7 @@ export const PlatformAccount = {
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = String(object.validity);
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     if (object.aliasOf !== undefined && object.aliasOf !== null) {
       message.aliasOf = String(object.aliasOf);
@@ -998,12 +997,12 @@ export const PlatformAccount = {
     if (object.address !== undefined && object.address !== null) {
       message.address = object.address;
     } else {
-      message.address = "";
+      message.address = '';
     }
     if (object.name !== undefined && object.name !== null) {
       message.name = object.name;
     } else {
-      message.name = "";
+      message.name = '';
     }
     if (object.isActive !== undefined && object.isActive !== null) {
       message.isActive = object.isActive;
@@ -1013,7 +1012,7 @@ export const PlatformAccount = {
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = object.validity;
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     if (object.aliasOf !== undefined && object.aliasOf !== null) {
       message.aliasOf = object.aliasOf;
@@ -1025,24 +1024,24 @@ export const PlatformAccount = {
 };
 
 const basePlatformToken: object = {
-  address: "",
-  name: "",
+  address: '',
+  name: '',
   isActive: false,
-  validity: "",
+  validity: '',
 };
 
 export const PlatformToken = {
   encode(message: PlatformToken, writer: Writer = Writer.create()): Writer {
-    if (message.address !== "") {
+    if (message.address !== '') {
       writer.uint32(10).string(message.address);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(18).string(message.name);
     }
     if (message.isActive === true) {
       writer.uint32(24).bool(message.isActive);
     }
-    if (message.validity !== "") {
+    if (message.validity !== '') {
       writer.uint32(34).string(message.validity);
     }
     return writer;
@@ -1080,12 +1079,12 @@ export const PlatformToken = {
     if (object.address !== undefined && object.address !== null) {
       message.address = String(object.address);
     } else {
-      message.address = "";
+      message.address = '';
     }
     if (object.name !== undefined && object.name !== null) {
       message.name = String(object.name);
     } else {
-      message.name = "";
+      message.name = '';
     }
     if (object.isActive !== undefined && object.isActive !== null) {
       message.isActive = Boolean(object.isActive);
@@ -1095,7 +1094,7 @@ export const PlatformToken = {
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = String(object.validity);
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -1114,12 +1113,12 @@ export const PlatformToken = {
     if (object.address !== undefined && object.address !== null) {
       message.address = object.address;
     } else {
-      message.address = "";
+      message.address = '';
     }
     if (object.name !== undefined && object.name !== null) {
       message.name = object.name;
     } else {
-      message.name = "";
+      message.name = '';
     }
     if (object.isActive !== undefined && object.isActive !== null) {
       message.isActive = object.isActive;
@@ -1129,7 +1128,7 @@ export const PlatformToken = {
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = object.validity;
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -1137,41 +1136,41 @@ export const PlatformToken = {
 
 const baseSushiLiquidityPair: object = {
   id: 0,
-  address: "",
-  baseAddress: "",
-  baseSymbol: "",
+  address: '',
+  baseAddress: '',
+  baseSymbol: '',
   baseDecimals: 0,
-  quoteAddress: "",
-  quoteSymbol: "",
+  quoteAddress: '',
+  quoteSymbol: '',
   quoteDecimals: 0,
   isActive: false,
-  validity: "",
+  validity: '',
 };
 
 export const SushiLiquidityPair = {
   encode(
     message: SushiLiquidityPair,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
     if (message.id !== 0) {
       writer.uint32(8).int64(message.id);
     }
-    if (message.address !== "") {
+    if (message.address !== '') {
       writer.uint32(18).string(message.address);
     }
-    if (message.baseAddress !== "") {
+    if (message.baseAddress !== '') {
       writer.uint32(26).string(message.baseAddress);
     }
-    if (message.baseSymbol !== "") {
+    if (message.baseSymbol !== '') {
       writer.uint32(34).string(message.baseSymbol);
     }
     if (message.baseDecimals !== 0) {
       writer.uint32(40).int32(message.baseDecimals);
     }
-    if (message.quoteAddress !== "") {
+    if (message.quoteAddress !== '') {
       writer.uint32(50).string(message.quoteAddress);
     }
-    if (message.quoteSymbol !== "") {
+    if (message.quoteSymbol !== '') {
       writer.uint32(58).string(message.quoteSymbol);
     }
     if (message.quoteDecimals !== 0) {
@@ -1180,7 +1179,7 @@ export const SushiLiquidityPair = {
     if (message.isActive === true) {
       writer.uint32(72).bool(message.isActive);
     }
-    if (message.validity !== "") {
+    if (message.validity !== '') {
       writer.uint32(82).string(message.validity);
     }
     return writer;
@@ -1241,17 +1240,17 @@ export const SushiLiquidityPair = {
     if (object.address !== undefined && object.address !== null) {
       message.address = String(object.address);
     } else {
-      message.address = "";
+      message.address = '';
     }
     if (object.baseAddress !== undefined && object.baseAddress !== null) {
       message.baseAddress = String(object.baseAddress);
     } else {
-      message.baseAddress = "";
+      message.baseAddress = '';
     }
     if (object.baseSymbol !== undefined && object.baseSymbol !== null) {
       message.baseSymbol = String(object.baseSymbol);
     } else {
-      message.baseSymbol = "";
+      message.baseSymbol = '';
     }
     if (object.baseDecimals !== undefined && object.baseDecimals !== null) {
       message.baseDecimals = Number(object.baseDecimals);
@@ -1261,12 +1260,12 @@ export const SushiLiquidityPair = {
     if (object.quoteAddress !== undefined && object.quoteAddress !== null) {
       message.quoteAddress = String(object.quoteAddress);
     } else {
-      message.quoteAddress = "";
+      message.quoteAddress = '';
     }
     if (object.quoteSymbol !== undefined && object.quoteSymbol !== null) {
       message.quoteSymbol = String(object.quoteSymbol);
     } else {
-      message.quoteSymbol = "";
+      message.quoteSymbol = '';
     }
     if (object.quoteDecimals !== undefined && object.quoteDecimals !== null) {
       message.quoteDecimals = Number(object.quoteDecimals);
@@ -1281,7 +1280,7 @@ export const SushiLiquidityPair = {
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = String(object.validity);
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -1316,17 +1315,17 @@ export const SushiLiquidityPair = {
     if (object.address !== undefined && object.address !== null) {
       message.address = object.address;
     } else {
-      message.address = "";
+      message.address = '';
     }
     if (object.baseAddress !== undefined && object.baseAddress !== null) {
       message.baseAddress = object.baseAddress;
     } else {
-      message.baseAddress = "";
+      message.baseAddress = '';
     }
     if (object.baseSymbol !== undefined && object.baseSymbol !== null) {
       message.baseSymbol = object.baseSymbol;
     } else {
-      message.baseSymbol = "";
+      message.baseSymbol = '';
     }
     if (object.baseDecimals !== undefined && object.baseDecimals !== null) {
       message.baseDecimals = object.baseDecimals;
@@ -1336,12 +1335,12 @@ export const SushiLiquidityPair = {
     if (object.quoteAddress !== undefined && object.quoteAddress !== null) {
       message.quoteAddress = object.quoteAddress;
     } else {
-      message.quoteAddress = "";
+      message.quoteAddress = '';
     }
     if (object.quoteSymbol !== undefined && object.quoteSymbol !== null) {
       message.quoteSymbol = object.quoteSymbol;
     } else {
-      message.quoteSymbol = "";
+      message.quoteSymbol = '';
     }
     if (object.quoteDecimals !== undefined && object.quoteDecimals !== null) {
       message.quoteDecimals = object.quoteDecimals;
@@ -1356,7 +1355,7 @@ export const SushiLiquidityPair = {
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = object.validity;
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -1364,15 +1363,15 @@ export const SushiLiquidityPair = {
 
 const baseUniLiquidityPair: object = {
   id: 0,
-  address: "",
-  baseAddress: "",
-  baseSymbol: "",
+  address: '',
+  baseAddress: '',
+  baseSymbol: '',
   baseDecimals: 0,
-  quoteAddress: "",
-  quoteSymbol: "",
+  quoteAddress: '',
+  quoteSymbol: '',
   quoteDecimals: 0,
   isActive: false,
-  validity: "",
+  validity: '',
 };
 
 export const UniLiquidityPair = {
@@ -1380,22 +1379,22 @@ export const UniLiquidityPair = {
     if (message.id !== 0) {
       writer.uint32(8).int64(message.id);
     }
-    if (message.address !== "") {
+    if (message.address !== '') {
       writer.uint32(18).string(message.address);
     }
-    if (message.baseAddress !== "") {
+    if (message.baseAddress !== '') {
       writer.uint32(26).string(message.baseAddress);
     }
-    if (message.baseSymbol !== "") {
+    if (message.baseSymbol !== '') {
       writer.uint32(34).string(message.baseSymbol);
     }
     if (message.baseDecimals !== 0) {
       writer.uint32(40).int32(message.baseDecimals);
     }
-    if (message.quoteAddress !== "") {
+    if (message.quoteAddress !== '') {
       writer.uint32(50).string(message.quoteAddress);
     }
-    if (message.quoteSymbol !== "") {
+    if (message.quoteSymbol !== '') {
       writer.uint32(58).string(message.quoteSymbol);
     }
     if (message.quoteDecimals !== 0) {
@@ -1404,7 +1403,7 @@ export const UniLiquidityPair = {
     if (message.isActive === true) {
       writer.uint32(72).bool(message.isActive);
     }
-    if (message.validity !== "") {
+    if (message.validity !== '') {
       writer.uint32(82).string(message.validity);
     }
     return writer;
@@ -1465,17 +1464,17 @@ export const UniLiquidityPair = {
     if (object.address !== undefined && object.address !== null) {
       message.address = String(object.address);
     } else {
-      message.address = "";
+      message.address = '';
     }
     if (object.baseAddress !== undefined && object.baseAddress !== null) {
       message.baseAddress = String(object.baseAddress);
     } else {
-      message.baseAddress = "";
+      message.baseAddress = '';
     }
     if (object.baseSymbol !== undefined && object.baseSymbol !== null) {
       message.baseSymbol = String(object.baseSymbol);
     } else {
-      message.baseSymbol = "";
+      message.baseSymbol = '';
     }
     if (object.baseDecimals !== undefined && object.baseDecimals !== null) {
       message.baseDecimals = Number(object.baseDecimals);
@@ -1485,12 +1484,12 @@ export const UniLiquidityPair = {
     if (object.quoteAddress !== undefined && object.quoteAddress !== null) {
       message.quoteAddress = String(object.quoteAddress);
     } else {
-      message.quoteAddress = "";
+      message.quoteAddress = '';
     }
     if (object.quoteSymbol !== undefined && object.quoteSymbol !== null) {
       message.quoteSymbol = String(object.quoteSymbol);
     } else {
-      message.quoteSymbol = "";
+      message.quoteSymbol = '';
     }
     if (object.quoteDecimals !== undefined && object.quoteDecimals !== null) {
       message.quoteDecimals = Number(object.quoteDecimals);
@@ -1505,7 +1504,7 @@ export const UniLiquidityPair = {
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = String(object.validity);
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -1540,17 +1539,17 @@ export const UniLiquidityPair = {
     if (object.address !== undefined && object.address !== null) {
       message.address = object.address;
     } else {
-      message.address = "";
+      message.address = '';
     }
     if (object.baseAddress !== undefined && object.baseAddress !== null) {
       message.baseAddress = object.baseAddress;
     } else {
-      message.baseAddress = "";
+      message.baseAddress = '';
     }
     if (object.baseSymbol !== undefined && object.baseSymbol !== null) {
       message.baseSymbol = object.baseSymbol;
     } else {
-      message.baseSymbol = "";
+      message.baseSymbol = '';
     }
     if (object.baseDecimals !== undefined && object.baseDecimals !== null) {
       message.baseDecimals = object.baseDecimals;
@@ -1560,12 +1559,12 @@ export const UniLiquidityPair = {
     if (object.quoteAddress !== undefined && object.quoteAddress !== null) {
       message.quoteAddress = object.quoteAddress;
     } else {
-      message.quoteAddress = "";
+      message.quoteAddress = '';
     }
     if (object.quoteSymbol !== undefined && object.quoteSymbol !== null) {
       message.quoteSymbol = object.quoteSymbol;
     } else {
-      message.quoteSymbol = "";
+      message.quoteSymbol = '';
     }
     if (object.quoteDecimals !== undefined && object.quoteDecimals !== null) {
       message.quoteDecimals = object.quoteDecimals;
@@ -1580,7 +1579,7 @@ export const UniLiquidityPair = {
     if (object.validity !== undefined && object.validity !== null) {
       message.validity = object.validity;
     } else {
-      message.validity = "";
+      message.validity = '';
     }
     return message;
   },
@@ -1589,11 +1588,11 @@ export const UniLiquidityPair = {
 declare var self: any | undefined;
 declare var window: any | undefined;
 var globalThis: any = (() => {
-  if (typeof globalThis !== "undefined") return globalThis;
-  if (typeof self !== "undefined") return self;
-  if (typeof window !== "undefined") return window;
-  if (typeof global !== "undefined") return global;
-  throw "Unable to locate global object";
+  if (typeof globalThis !== 'undefined') return globalThis;
+  if (typeof self !== 'undefined') return self;
+  if (typeof window !== 'undefined') return window;
+  if (typeof global !== 'undefined') return global;
+  throw 'Unable to locate global object';
 })();
 
 type Builtin =
@@ -1616,14 +1615,14 @@ export type DeepPartial<T> = T extends Builtin
 
 function longToNumber(long: Long): number {
   if (long.gt(Number.MAX_SAFE_INTEGER)) {
-    throw new globalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
+    throw new globalThis.Error('Value is larger than Number.MAX_SAFE_INTEGER');
   }
   return long.toNumber();
 }
 
 // If you get a compile-error about 'Constructor<Long> and ... have no overlap',
 // add '--ts_proto_opt=esModuleInterop=true' as a flag when calling 'protoc'.
-// @ts-ignore 
+// @ts-ignore
 if (util.Long !== Long) {
   util.Long = Long as any;
   configure();

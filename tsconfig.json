@@ -1,5 +1,4 @@
 {
-
   "compilerOptions": {
     "target": "es2018",
     "module": "esnext",
@@ -25,7 +24,6 @@
     "moduleResolution": "node",
     "baseUrl": "./"
   },
-    "include": ["source"],
-    "exclude": ["build", "typechain", "node_modules", "network", "test"]
-  
+  "include": ["source"],
+  "exclude": ["build", "typechain", "node_modules", "network", "test"]
 }

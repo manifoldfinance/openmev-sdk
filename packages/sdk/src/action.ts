@@ -1,16 +1,16 @@
 /* eslint-disable */
 
 /**
-* @file OpenMEV SDK Protobufs
-* @version 0.1.0
-* @copyright Manifold Finance, Inc. 2021
-* @package openmev-sdk
-*/
+ * @file OpenMEV SDK Protobufs
+ * @version 0.1.0
+ * @copyright Manifold Finance, Inc. 2021
+ * @package openmev-sdk
+ */
 
-import { util, configure, Writer, Reader } from "protobufjs/minimal";
-import * as Long from "long";
+import { util, configure, Writer, Reader } from 'protobufjs/minimal';
+import * as Long from 'long';
 
-export const protobufPackage = "com.manifoldfinance.protobuf.action";
+export const protobufPackage = 'com.manifoldfinance.protobuf.action';
 
 export interface ERC20Transfer {
   /** hex encoded recipient address */
@@ -157,14 +157,14 @@ export interface SwapExactTokensForTokensWithFlashloanMulti {
   path: string[];
 }
 
-const baseERC20Transfer: object = { recipient: "", amount: "" };
+const baseERC20Transfer: object = { recipient: '', amount: '' };
 
 export const ERC20Transfer = {
   encode(message: ERC20Transfer, writer: Writer = Writer.create()): Writer {
-    if (message.recipient !== "") {
+    if (message.recipient !== '') {
       writer.uint32(10).string(message.recipient);
     }
-    if (message.amount !== "") {
+    if (message.amount !== '') {
       writer.uint32(18).string(message.amount);
     }
     return writer;
@@ -196,12 +196,12 @@ export const ERC20Transfer = {
     if (object.recipient !== undefined && object.recipient !== null) {
       message.recipient = String(object.recipient);
     } else {
-      message.recipient = "";
+      message.recipient = '';
     }
     if (object.amount !== undefined && object.amount !== null) {
       message.amount = String(object.amount);
     } else {
-      message.amount = "";
+      message.amount = '';
     }
     return message;
   },
@@ -218,25 +218,25 @@ export const ERC20Transfer = {
     if (object.recipient !== undefined && object.recipient !== null) {
       message.recipient = object.recipient;
     } else {
-      message.recipient = "";
+      message.recipient = '';
     }
     if (object.amount !== undefined && object.amount !== null) {
       message.amount = object.amount;
     } else {
-      message.amount = "";
+      message.amount = '';
     }
     return message;
   },
 };
 
-const baseERC20Approval: object = { spender: "", amount: "" };
+const baseERC20Approval: object = { spender: '', amount: '' };
 
 export const ERC20Approval = {
   encode(message: ERC20Approval, writer: Writer = Writer.create()): Writer {
-    if (message.spender !== "") {
+    if (message.spender !== '') {
       writer.uint32(10).string(message.spender);
     }
-    if (message.amount !== "") {
+    if (message.amount !== '') {
       writer.uint32(18).string(message.amount);
     }
     return writer;
@@ -268,12 +268,12 @@ export const ERC20Approval = {
     if (object.spender !== undefined && object.spender !== null) {
       message.spender = String(object.spender);
     } else {
-      message.spender = "";
+      message.spender = '';
     }
     if (object.amount !== undefined && object.amount !== null) {
       message.amount = String(object.amount);
     } else {
-      message.amount = "";
+      message.amount = '';
     }
     return message;
   },
@@ -290,37 +290,37 @@ export const ERC20Approval = {
     if (object.spender !== undefined && object.spender !== null) {
       message.spender = object.spender;
     } else {
-      message.spender = "";
+      message.spender = '';
     }
     if (object.amount !== undefined && object.amount !== null) {
       message.amount = object.amount;
     } else {
-      message.amount = "";
+      message.amount = '';
     }
     return message;
   },
 };
 
 const baseSwapExactTokensForTokens: object = {
-  amountIn: "",
-  amountOutMin: "",
-  to: "",
+  amountIn: '',
+  amountOutMin: '',
+  to: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapExactTokensForTokens = {
   encode(
     message: SwapExactTokensForTokens,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.amountIn !== "") {
+    if (message.amountIn !== '') {
       writer.uint32(10).string(message.amountIn);
     }
-    if (message.amountOutMin !== "") {
+    if (message.amountOutMin !== '') {
       writer.uint32(18).string(message.amountOutMin);
     }
-    if (message.to !== "") {
+    if (message.to !== '') {
       writer.uint32(26).string(message.to);
     }
     if (message.deadline !== 0) {
@@ -334,7 +334,7 @@ export const SwapExactTokensForTokens = {
 
   decode(
     input: Reader | Uint8Array,
-    length?: number
+    length?: number,
   ): SwapExactTokensForTokens {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
@@ -376,17 +376,17 @@ export const SwapExactTokensForTokens = {
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = String(object.amountIn);
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = String(object.amountOutMin);
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = String(object.to);
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -417,7 +417,7 @@ export const SwapExactTokensForTokens = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapExactTokensForTokens>
+    object: DeepPartial<SwapExactTokensForTokens>,
   ): SwapExactTokensForTokens {
     const message = {
       ...baseSwapExactTokensForTokens,
@@ -426,17 +426,17 @@ export const SwapExactTokensForTokens = {
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = object.amountIn;
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = object.amountOutMin;
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = object.to;
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -453,25 +453,25 @@ export const SwapExactTokensForTokens = {
 };
 
 const baseSwapTokensForExactTokens: object = {
-  amountOut: "",
-  amountInMax: "",
-  to: "",
+  amountOut: '',
+  amountInMax: '',
+  to: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapTokensForExactTokens = {
   encode(
     message: SwapTokensForExactTokens,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.amountOut !== "") {
+    if (message.amountOut !== '') {
       writer.uint32(10).string(message.amountOut);
     }
-    if (message.amountInMax !== "") {
+    if (message.amountInMax !== '') {
       writer.uint32(18).string(message.amountInMax);
     }
-    if (message.to !== "") {
+    if (message.to !== '') {
       writer.uint32(26).string(message.to);
     }
     if (message.deadline !== 0) {
@@ -485,7 +485,7 @@ export const SwapTokensForExactTokens = {
 
   decode(
     input: Reader | Uint8Array,
-    length?: number
+    length?: number,
   ): SwapTokensForExactTokens {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
@@ -527,17 +527,17 @@ export const SwapTokensForExactTokens = {
     if (object.amountOut !== undefined && object.amountOut !== null) {
       message.amountOut = String(object.amountOut);
     } else {
-      message.amountOut = "";
+      message.amountOut = '';
     }
     if (object.amountInMax !== undefined && object.amountInMax !== null) {
       message.amountInMax = String(object.amountInMax);
     } else {
-      message.amountInMax = "";
+      message.amountInMax = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = String(object.to);
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -568,7 +568,7 @@ export const SwapTokensForExactTokens = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapTokensForExactTokens>
+    object: DeepPartial<SwapTokensForExactTokens>,
   ): SwapTokensForExactTokens {
     const message = {
       ...baseSwapTokensForExactTokens,
@@ -577,17 +577,17 @@ export const SwapTokensForExactTokens = {
     if (object.amountOut !== undefined && object.amountOut !== null) {
       message.amountOut = object.amountOut;
     } else {
-      message.amountOut = "";
+      message.amountOut = '';
     }
     if (object.amountInMax !== undefined && object.amountInMax !== null) {
       message.amountInMax = object.amountInMax;
     } else {
-      message.amountInMax = "";
+      message.amountInMax = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = object.to;
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -604,21 +604,21 @@ export const SwapTokensForExactTokens = {
 };
 
 const baseSwapExactETHForTokens: object = {
-  amountOutMin: "",
-  to: "",
+  amountOutMin: '',
+  to: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapExactETHForTokens = {
   encode(
     message: SwapExactETHForTokens,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.amountOutMin !== "") {
+    if (message.amountOutMin !== '') {
       writer.uint32(10).string(message.amountOutMin);
     }
-    if (message.to !== "") {
+    if (message.to !== '') {
       writer.uint32(18).string(message.to);
     }
     if (message.deadline !== 0) {
@@ -664,12 +664,12 @@ export const SwapExactETHForTokens = {
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = String(object.amountOutMin);
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = String(object.to);
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -699,19 +699,19 @@ export const SwapExactETHForTokens = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapExactETHForTokens>
+    object: DeepPartial<SwapExactETHForTokens>,
   ): SwapExactETHForTokens {
     const message = { ...baseSwapExactETHForTokens } as SwapExactETHForTokens;
     message.path = [];
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = object.amountOutMin;
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = object.to;
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -728,25 +728,25 @@ export const SwapExactETHForTokens = {
 };
 
 const baseSwapTokensForExactETH: object = {
-  amountOut: "",
-  amountInMax: "",
-  to: "",
+  amountOut: '',
+  amountInMax: '',
+  to: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapTokensForExactETH = {
   encode(
     message: SwapTokensForExactETH,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.amountOut !== "") {
+    if (message.amountOut !== '') {
       writer.uint32(10).string(message.amountOut);
     }
-    if (message.amountInMax !== "") {
+    if (message.amountInMax !== '') {
       writer.uint32(18).string(message.amountInMax);
     }
-    if (message.to !== "") {
+    if (message.to !== '') {
       writer.uint32(26).string(message.to);
     }
     if (message.deadline !== 0) {
@@ -795,17 +795,17 @@ export const SwapTokensForExactETH = {
     if (object.amountOut !== undefined && object.amountOut !== null) {
       message.amountOut = String(object.amountOut);
     } else {
-      message.amountOut = "";
+      message.amountOut = '';
     }
     if (object.amountInMax !== undefined && object.amountInMax !== null) {
       message.amountInMax = String(object.amountInMax);
     } else {
-      message.amountInMax = "";
+      message.amountInMax = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = String(object.to);
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -836,24 +836,24 @@ export const SwapTokensForExactETH = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapTokensForExactETH>
+    object: DeepPartial<SwapTokensForExactETH>,
   ): SwapTokensForExactETH {
     const message = { ...baseSwapTokensForExactETH } as SwapTokensForExactETH;
     message.path = [];
     if (object.amountOut !== undefined && object.amountOut !== null) {
       message.amountOut = object.amountOut;
     } else {
-      message.amountOut = "";
+      message.amountOut = '';
     }
     if (object.amountInMax !== undefined && object.amountInMax !== null) {
       message.amountInMax = object.amountInMax;
     } else {
-      message.amountInMax = "";
+      message.amountInMax = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = object.to;
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -870,25 +870,25 @@ export const SwapTokensForExactETH = {
 };
 
 const baseSwapExactTokensForETH: object = {
-  amountIn: "",
-  amountOutMin: "",
-  to: "",
+  amountIn: '',
+  amountOutMin: '',
+  to: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapExactTokensForETH = {
   encode(
     message: SwapExactTokensForETH,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.amountIn !== "") {
+    if (message.amountIn !== '') {
       writer.uint32(10).string(message.amountIn);
     }
-    if (message.amountOutMin !== "") {
+    if (message.amountOutMin !== '') {
       writer.uint32(18).string(message.amountOutMin);
     }
-    if (message.to !== "") {
+    if (message.to !== '') {
       writer.uint32(26).string(message.to);
     }
     if (message.deadline !== 0) {
@@ -937,17 +937,17 @@ export const SwapExactTokensForETH = {
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = String(object.amountIn);
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = String(object.amountOutMin);
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = String(object.to);
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -978,24 +978,24 @@ export const SwapExactTokensForETH = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapExactTokensForETH>
+    object: DeepPartial<SwapExactTokensForETH>,
   ): SwapExactTokensForETH {
     const message = { ...baseSwapExactTokensForETH } as SwapExactTokensForETH;
     message.path = [];
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = object.amountIn;
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = object.amountOutMin;
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = object.to;
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -1012,21 +1012,21 @@ export const SwapExactTokensForETH = {
 };
 
 const baseSwapETHForExactTokens: object = {
-  amountOut: "",
-  to: "",
+  amountOut: '',
+  to: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapETHForExactTokens = {
   encode(
     message: SwapETHForExactTokens,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.amountOut !== "") {
+    if (message.amountOut !== '') {
       writer.uint32(10).string(message.amountOut);
     }
-    if (message.to !== "") {
+    if (message.to !== '') {
       writer.uint32(18).string(message.to);
     }
     if (message.deadline !== 0) {
@@ -1072,12 +1072,12 @@ export const SwapETHForExactTokens = {
     if (object.amountOut !== undefined && object.amountOut !== null) {
       message.amountOut = String(object.amountOut);
     } else {
-      message.amountOut = "";
+      message.amountOut = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = String(object.to);
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -1106,19 +1106,19 @@ export const SwapETHForExactTokens = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapETHForExactTokens>
+    object: DeepPartial<SwapETHForExactTokens>,
   ): SwapETHForExactTokens {
     const message = { ...baseSwapETHForExactTokens } as SwapETHForExactTokens;
     message.path = [];
     if (object.amountOut !== undefined && object.amountOut !== null) {
       message.amountOut = object.amountOut;
     } else {
-      message.amountOut = "";
+      message.amountOut = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = object.to;
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -1135,25 +1135,25 @@ export const SwapETHForExactTokens = {
 };
 
 const baseSwapExactTokensForTokensSupportingFeeOnTransferTokens: object = {
-  amountIn: "",
-  amountOutMin: "",
-  to: "",
+  amountIn: '',
+  amountOutMin: '',
+  to: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapExactTokensForTokensSupportingFeeOnTransferTokens = {
   encode(
     message: SwapExactTokensForTokensSupportingFeeOnTransferTokens,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.amountIn !== "") {
+    if (message.amountIn !== '') {
       writer.uint32(10).string(message.amountIn);
     }
-    if (message.amountOutMin !== "") {
+    if (message.amountOutMin !== '') {
       writer.uint32(18).string(message.amountOutMin);
     }
-    if (message.to !== "") {
+    if (message.to !== '') {
       writer.uint32(26).string(message.to);
     }
     if (message.deadline !== 0) {
@@ -1167,7 +1167,7 @@ export const SwapExactTokensForTokensSupportingFeeOnTransferTokens = {
 
   decode(
     input: Reader | Uint8Array,
-    length?: number
+    length?: number,
   ): SwapExactTokensForTokensSupportingFeeOnTransferTokens {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
@@ -1209,17 +1209,17 @@ export const SwapExactTokensForTokensSupportingFeeOnTransferTokens = {
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = String(object.amountIn);
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = String(object.amountOutMin);
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = String(object.to);
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -1235,7 +1235,7 @@ export const SwapExactTokensForTokensSupportingFeeOnTransferTokens = {
   },
 
   toJSON(
-    message: SwapExactTokensForTokensSupportingFeeOnTransferTokens
+    message: SwapExactTokensForTokensSupportingFeeOnTransferTokens,
   ): unknown {
     const obj: any = {};
     message.amountIn !== undefined && (obj.amountIn = message.amountIn);
@@ -1252,7 +1252,7 @@ export const SwapExactTokensForTokensSupportingFeeOnTransferTokens = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapExactTokensForTokensSupportingFeeOnTransferTokens>
+    object: DeepPartial<SwapExactTokensForTokensSupportingFeeOnTransferTokens>,
   ): SwapExactTokensForTokensSupportingFeeOnTransferTokens {
     const message = {
       ...baseSwapExactTokensForTokensSupportingFeeOnTransferTokens,
@@ -1261,17 +1261,17 @@ export const SwapExactTokensForTokensSupportingFeeOnTransferTokens = {
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = object.amountIn;
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = object.amountOutMin;
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = object.to;
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -1288,21 +1288,21 @@ export const SwapExactTokensForTokensSupportingFeeOnTransferTokens = {
 };
 
 const baseSwapExactETHForTokensSupportingFeeOnTransferTokens: object = {
-  amountOutMin: "",
-  to: "",
+  amountOutMin: '',
+  to: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapExactETHForTokensSupportingFeeOnTransferTokens = {
   encode(
     message: SwapExactETHForTokensSupportingFeeOnTransferTokens,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.amountOutMin !== "") {
+    if (message.amountOutMin !== '') {
       writer.uint32(10).string(message.amountOutMin);
     }
-    if (message.to !== "") {
+    if (message.to !== '') {
       writer.uint32(18).string(message.to);
     }
     if (message.deadline !== 0) {
@@ -1316,7 +1316,7 @@ export const SwapExactETHForTokensSupportingFeeOnTransferTokens = {
 
   decode(
     input: Reader | Uint8Array,
-    length?: number
+    length?: number,
   ): SwapExactETHForTokensSupportingFeeOnTransferTokens {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
@@ -1355,12 +1355,12 @@ export const SwapExactETHForTokensSupportingFeeOnTransferTokens = {
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = String(object.amountOutMin);
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = String(object.to);
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -1390,7 +1390,7 @@ export const SwapExactETHForTokensSupportingFeeOnTransferTokens = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapExactETHForTokensSupportingFeeOnTransferTokens>
+    object: DeepPartial<SwapExactETHForTokensSupportingFeeOnTransferTokens>,
   ): SwapExactETHForTokensSupportingFeeOnTransferTokens {
     const message = {
       ...baseSwapExactETHForTokensSupportingFeeOnTransferTokens,
@@ -1399,12 +1399,12 @@ export const SwapExactETHForTokensSupportingFeeOnTransferTokens = {
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = object.amountOutMin;
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = object.to;
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -1421,25 +1421,25 @@ export const SwapExactETHForTokensSupportingFeeOnTransferTokens = {
 };
 
 const baseSwapExactTokensForETHSupportingFeeOnTransferTokens: object = {
-  amountIn: "",
-  amountOutMin: "",
-  to: "",
+  amountIn: '',
+  amountOutMin: '',
+  to: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapExactTokensForETHSupportingFeeOnTransferTokens = {
   encode(
     message: SwapExactTokensForETHSupportingFeeOnTransferTokens,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.amountIn !== "") {
+    if (message.amountIn !== '') {
       writer.uint32(10).string(message.amountIn);
     }
-    if (message.amountOutMin !== "") {
+    if (message.amountOutMin !== '') {
       writer.uint32(18).string(message.amountOutMin);
     }
-    if (message.to !== "") {
+    if (message.to !== '') {
       writer.uint32(26).string(message.to);
     }
     if (message.deadline !== 0) {
@@ -1453,7 +1453,7 @@ export const SwapExactTokensForETHSupportingFeeOnTransferTokens = {
 
   decode(
     input: Reader | Uint8Array,
-    length?: number
+    length?: number,
   ): SwapExactTokensForETHSupportingFeeOnTransferTokens {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
@@ -1495,17 +1495,17 @@ export const SwapExactTokensForETHSupportingFeeOnTransferTokens = {
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = String(object.amountIn);
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = String(object.amountOutMin);
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = String(object.to);
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -1536,7 +1536,7 @@ export const SwapExactTokensForETHSupportingFeeOnTransferTokens = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapExactTokensForETHSupportingFeeOnTransferTokens>
+    object: DeepPartial<SwapExactTokensForETHSupportingFeeOnTransferTokens>,
   ): SwapExactTokensForETHSupportingFeeOnTransferTokens {
     const message = {
       ...baseSwapExactTokensForETHSupportingFeeOnTransferTokens,
@@ -1545,17 +1545,17 @@ export const SwapExactTokensForETHSupportingFeeOnTransferTokens = {
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = object.amountIn;
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.amountOutMin !== undefined && object.amountOutMin !== null) {
       message.amountOutMin = object.amountOutMin;
     } else {
-      message.amountOutMin = "";
+      message.amountOutMin = '';
     }
     if (object.to !== undefined && object.to !== null) {
       message.to = object.to;
     } else {
-      message.to = "";
+      message.to = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -1572,21 +1572,21 @@ export const SwapExactTokensForETHSupportingFeeOnTransferTokens = {
 };
 
 const baseSwapExactTokensForTokensWithFlashloan: object = {
-  router: "",
-  amountIn: "",
+  router: '',
+  amountIn: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapExactTokensForTokensWithFlashloan = {
   encode(
     message: SwapExactTokensForTokensWithFlashloan,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.router !== "") {
+    if (message.router !== '') {
       writer.uint32(10).string(message.router);
     }
-    if (message.amountIn !== "") {
+    if (message.amountIn !== '') {
       writer.uint32(18).string(message.amountIn);
     }
     if (message.deadline !== 0) {
@@ -1600,7 +1600,7 @@ export const SwapExactTokensForTokensWithFlashloan = {
 
   decode(
     input: Reader | Uint8Array,
-    length?: number
+    length?: number,
   ): SwapExactTokensForTokensWithFlashloan {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
@@ -1639,12 +1639,12 @@ export const SwapExactTokensForTokensWithFlashloan = {
     if (object.router !== undefined && object.router !== null) {
       message.router = String(object.router);
     } else {
-      message.router = "";
+      message.router = '';
     }
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = String(object.amountIn);
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -1673,7 +1673,7 @@ export const SwapExactTokensForTokensWithFlashloan = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapExactTokensForTokensWithFlashloan>
+    object: DeepPartial<SwapExactTokensForTokensWithFlashloan>,
   ): SwapExactTokensForTokensWithFlashloan {
     const message = {
       ...baseSwapExactTokensForTokensWithFlashloan,
@@ -1682,12 +1682,12 @@ export const SwapExactTokensForTokensWithFlashloan = {
     if (object.router !== undefined && object.router !== null) {
       message.router = object.router;
     } else {
-      message.router = "";
+      message.router = '';
     }
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = object.amountIn;
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;
@@ -1704,21 +1704,21 @@ export const SwapExactTokensForTokensWithFlashloan = {
 };
 
 const baseSwapExactTokensForTokensWithFlashloanMulti: object = {
-  router: "",
-  amountIn: "",
+  router: '',
+  amountIn: '',
   deadline: 0,
-  path: "",
+  path: '',
 };
 
 export const SwapExactTokensForTokensWithFlashloanMulti = {
   encode(
     message: SwapExactTokensForTokensWithFlashloanMulti,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
     for (const v of message.router) {
       writer.uint32(10).string(v!);
     }
-    if (message.amountIn !== "") {
+    if (message.amountIn !== '') {
       writer.uint32(18).string(message.amountIn);
     }
     if (message.deadline !== 0) {
@@ -1732,7 +1732,7 @@ export const SwapExactTokensForTokensWithFlashloanMulti = {
 
   decode(
     input: Reader | Uint8Array,
-    length?: number
+    length?: number,
   ): SwapExactTokensForTokensWithFlashloanMulti {
     const reader = input instanceof Reader ? input : new Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
@@ -1778,7 +1778,7 @@ export const SwapExactTokensForTokensWithFlashloanMulti = {
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = String(object.amountIn);
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = Number(object.deadline);
@@ -1811,7 +1811,7 @@ export const SwapExactTokensForTokensWithFlashloanMulti = {
   },
 
   fromPartial(
-    object: DeepPartial<SwapExactTokensForTokensWithFlashloanMulti>
+    object: DeepPartial<SwapExactTokensForTokensWithFlashloanMulti>,
   ): SwapExactTokensForTokensWithFlashloanMulti {
     const message = {
       ...baseSwapExactTokensForTokensWithFlashloanMulti,
@@ -1826,7 +1826,7 @@ export const SwapExactTokensForTokensWithFlashloanMulti = {
     if (object.amountIn !== undefined && object.amountIn !== null) {
       message.amountIn = object.amountIn;
     } else {
-      message.amountIn = "";
+      message.amountIn = '';
     }
     if (object.deadline !== undefined && object.deadline !== null) {
       message.deadline = object.deadline;

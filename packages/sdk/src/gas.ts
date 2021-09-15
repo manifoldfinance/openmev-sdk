@@ -1,17 +1,15 @@
 /* eslint-disable */
 
 /**
-* @file Gas Pricing Integration
-* @version 0.1.0
-* @copyright Manifold Finance, Inc. 2021
-* @package openmev-sdk
-* @access api.txprice.com
-*/
+ * @file Gas Pricing Integration
+ * @version 0.1.0
+ * @copyright Manifold Finance, Inc. 2021
+ * @package openmev-sdk
+ * @access api.txprice.com
+ */
 
-
-import { util, configure, Writer, Reader } from "protobufjs/minimal";
-import * as Long from "long";
-
+import { util, configure, Writer, Reader } from 'protobufjs/minimal';
+import * as Long from 'long';
 
 export interface EstimatedGasPrice {
   confidence: number;
@@ -159,14 +157,14 @@ export const EstimatedGasPrice = {
 };
 
 const baseBlockPrice: object = {
-  blockNumber: "",
+  blockNumber: '',
   estimatedTransactionCount: 0,
   baseFeePerGas: 0,
 };
 
 export const BlockPrice = {
   encode(message: BlockPrice, writer: Writer = Writer.create()): Writer {
-    if (message.blockNumber !== "") {
+    if (message.blockNumber !== '') {
       writer.uint32(10).string(message.blockNumber);
     }
     if (message.estimatedTransactionCount !== 0) {
@@ -200,7 +198,7 @@ export const BlockPrice = {
           break;
         case 10:
           message.estimatedPrices.push(
-            EstimatedGasPrice.decode(reader, reader.uint32())
+            EstimatedGasPrice.decode(reader, reader.uint32()),
           );
           break;
         default:
@@ -217,14 +215,14 @@ export const BlockPrice = {
     if (object.blockNumber !== undefined && object.blockNumber !== null) {
       message.blockNumber = String(object.blockNumber);
     } else {
-      message.blockNumber = "";
+      message.blockNumber = '';
     }
     if (
       object.estimatedTransactionCount !== undefined &&
       object.estimatedTransactionCount !== null
     ) {
       message.estimatedTransactionCount = Number(
-        object.estimatedTransactionCount
+        object.estimatedTransactionCount,
       );
     } else {
       message.estimatedTransactionCount = 0;
@@ -255,7 +253,7 @@ export const BlockPrice = {
       (obj.baseFeePerGas = message.baseFeePerGas);
     if (message.estimatedPrices) {
       obj.estimatedPrices = message.estimatedPrices.map((e) =>
-        e ? EstimatedGasPrice.toJSON(e) : undefined
+        e ? EstimatedGasPrice.toJSON(e) : undefined,
       );
     } else {
       obj.estimatedPrices = [];
@@ -269,7 +267,7 @@ export const BlockPrice = {
     if (object.blockNumber !== undefined && object.blockNumber !== null) {
       message.blockNumber = object.blockNumber;
     } else {
-      message.blockNumber = "";
+      message.blockNumber = '';
     }
     if (
       object.estimatedTransactionCount !== undefined &&
@@ -297,29 +295,29 @@ export const BlockPrice = {
 };
 
 const baseGasPrices: object = {
-  system: "",
-  network: "",
-  unit: "",
+  system: '',
+  network: '',
+  unit: '',
   maxPrice: 0,
-  currentBlockNumber: "",
+  currentBlockNumber: '',
   msSinceLastBlock: 0,
 };
 
 export const GasPrices = {
   encode(message: GasPrices, writer: Writer = Writer.create()): Writer {
-    if (message.system !== "") {
+    if (message.system !== '') {
       writer.uint32(10).string(message.system);
     }
-    if (message.network !== "") {
+    if (message.network !== '') {
       writer.uint32(18).string(message.network);
     }
-    if (message.unit !== "") {
+    if (message.unit !== '') {
       writer.uint32(26).string(message.unit);
     }
     if (message.maxPrice !== 0) {
       writer.uint32(32).int32(message.maxPrice);
     }
-    if (message.currentBlockNumber !== "") {
+    if (message.currentBlockNumber !== '') {
       writer.uint32(42).string(message.currentBlockNumber);
     }
     if (message.msSinceLastBlock !== 0) {
@@ -374,17 +372,17 @@ export const GasPrices = {
     if (object.system !== undefined && object.system !== null) {
       message.system = String(object.system);
     } else {
-      message.system = "";
+      message.system = '';
     }
     if (object.network !== undefined && object.network !== null) {
       message.network = String(object.network);
     } else {
-      message.network = "";
+      message.network = '';
     }
     if (object.unit !== undefined && object.unit !== null) {
       message.unit = String(object.unit);
     } else {
-      message.unit = "";
+      message.unit = '';
     }
     if (object.maxPrice !== undefined && object.maxPrice !== null) {
       message.maxPrice = Number(object.maxPrice);
@@ -397,7 +395,7 @@ export const GasPrices = {
     ) {
       message.currentBlockNumber = String(object.currentBlockNumber);
     } else {
-      message.currentBlockNumber = "";
+      message.currentBlockNumber = '';
     }
     if (
       object.msSinceLastBlock !== undefined &&
@@ -427,7 +425,7 @@ export const GasPrices = {
       (obj.msSinceLastBlock = message.msSinceLastBlock);
     if (message.blockPrices) {
       obj.blockPrices = message.blockPrices.map((e) =>
-        e ? BlockPrice.toJSON(e) : undefined
+        e ? BlockPrice.toJSON(e) : undefined,
       );
     } else {
       obj.blockPrices = [];
@@ -441,17 +439,17 @@ export const GasPrices = {
     if (object.system !== undefined && object.system !== null) {
       message.system = object.system;
     } else {
-      message.system = "";
+      message.system = '';
     }
     if (object.network !== undefined && object.network !== null) {
       message.network = object.network;
     } else {
-      message.network = "";
+      message.network = '';
     }
     if (object.unit !== undefined && object.unit !== null) {
       message.unit = object.unit;
     } else {
-      message.unit = "";
+      message.unit = '';
     }
     if (object.maxPrice !== undefined && object.maxPrice !== null) {
       message.maxPrice = object.maxPrice;
@@ -464,7 +462,7 @@ export const GasPrices = {
     ) {
       message.currentBlockNumber = object.currentBlockNumber;
     } else {
-      message.currentBlockNumber = "";
+      message.currentBlockNumber = '';
     }
     if (
       object.msSinceLastBlock !== undefined &&
@@ -486,11 +484,11 @@ export const GasPrices = {
 declare var self: any | undefined;
 declare var window: any | undefined;
 var globalThis: any = (() => {
-  if (typeof globalThis !== "undefined") return globalThis;
-  if (typeof self !== "undefined") return self;
-  if (typeof window !== "undefined") return window;
-  if (typeof global !== "undefined") return global;
-  throw "Unable to locate global object";
+  if (typeof globalThis !== 'undefined') return globalThis;
+  if (typeof self !== 'undefined') return self;
+  if (typeof window !== 'undefined') return window;
+  if (typeof global !== 'undefined') return global;
+  throw 'Unable to locate global object';
 })();
 
 type Builtin =
@@ -513,14 +511,14 @@ export type DeepPartial<T> = T extends Builtin
 
 function longToNumber(long: Long): number {
   if (long.gt(Number.MAX_SAFE_INTEGER)) {
-    throw new globalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
+    throw new globalThis.Error('Value is larger than Number.MAX_SAFE_INTEGER');
   }
   return long.toNumber();
 }
 
 // If you get a compile-error about 'Constructor<Long> and ... have no overlap',
 // add '--ts_proto_opt=esModuleInterop=true' as a flag when calling 'protoc'.
-// @ts-ignore 
+// @ts-ignore
 if (util.Long !== Long) {
   util.Long = Long as any;
   configure();

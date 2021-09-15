@@ -9,3 +9,4 @@ package-lock.json merge=npm-merge-driver
 *.sh     eol=lf
 *.bash   eol=lf
 LICENSE* text
+/CHANGELOG*	merge=union

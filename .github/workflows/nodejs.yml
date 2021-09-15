@@ -1,14 +1,14 @@
 name: nodejs
 on:
   push:
-     paths:
-      - "**/**"
-      - "!**/*.md/**"
+    paths:
+      - '**/**'
+      - '!**/*.md/**'
 
 defaults:
   run:
     shell: bash
-      
+
 env:
   CI: true
   FORCE_COLOR: 2
@@ -35,5 +35,5 @@ jobs:
 
       - name: Install npm dependencies
         run: |
-         npm install
-         echo "::set-output name=install::nodejs"
+          npm install
+          echo "::set-output name=install::nodejs"

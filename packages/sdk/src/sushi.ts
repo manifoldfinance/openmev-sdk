@@ -1,14 +1,14 @@
 /* eslint-disable */
 
 /**
-* @file SushiSwap Integration
-* @version 0.1.0
-* @copyright Manifold Finance, Inc. 2021
-* @package openmev-sdk
-*/
+ * @file SushiSwap Integration
+ * @version 0.1.0
+ * @copyright Manifold Finance, Inc. 2021
+ * @package openmev-sdk
+ */
 
-import { util, configure, Writer, Reader } from "protobufjs/minimal";
-import * as Long from "long";
+import { util, configure, Writer, Reader } from 'protobufjs/minimal';
+import * as Long from 'long';
 
 export interface SushiLiquidity {
   id: number;
@@ -27,11 +27,11 @@ export interface BlockSushiLiquidity {
 
 const baseSushiLiquidity: object = {
   id: 0,
-  contractAddress: "",
+  contractAddress: '',
   baseDecimals: 0,
-  baseReserve: "",
+  baseReserve: '',
   quoteDecimals: 0,
-  quoteReserve: "",
+  quoteReserve: '',
   blockTimestamp: 0,
 };
 
@@ -40,19 +40,19 @@ export const SushiLiquidity = {
     if (message.id !== 0) {
       writer.uint32(8).int64(message.id);
     }
-    if (message.contractAddress !== "") {
+    if (message.contractAddress !== '') {
       writer.uint32(18).string(message.contractAddress);
     }
     if (message.baseDecimals !== 0) {
       writer.uint32(24).int32(message.baseDecimals);
     }
-    if (message.baseReserve !== "") {
+    if (message.baseReserve !== '') {
       writer.uint32(34).string(message.baseReserve);
     }
     if (message.quoteDecimals !== 0) {
       writer.uint32(40).int32(message.quoteDecimals);
     }
-    if (message.quoteReserve !== "") {
+    if (message.quoteReserve !== '') {
       writer.uint32(50).string(message.quoteReserve);
     }
     if (message.blockTimestamp !== 0) {
@@ -110,7 +110,7 @@ export const SushiLiquidity = {
     ) {
       message.contractAddress = String(object.contractAddress);
     } else {
-      message.contractAddress = "";
+      message.contractAddress = '';
     }
     if (object.baseDecimals !== undefined && object.baseDecimals !== null) {
       message.baseDecimals = Number(object.baseDecimals);
@@ -120,7 +120,7 @@ export const SushiLiquidity = {
     if (object.baseReserve !== undefined && object.baseReserve !== null) {
       message.baseReserve = String(object.baseReserve);
     } else {
-      message.baseReserve = "";
+      message.baseReserve = '';
     }
     if (object.quoteDecimals !== undefined && object.quoteDecimals !== null) {
       message.quoteDecimals = Number(object.quoteDecimals);
@@ -130,7 +130,7 @@ export const SushiLiquidity = {
     if (object.quoteReserve !== undefined && object.quoteReserve !== null) {
       message.quoteReserve = String(object.quoteReserve);
     } else {
-      message.quoteReserve = "";
+      message.quoteReserve = '';
     }
     if (object.blockTimestamp !== undefined && object.blockTimestamp !== null) {
       message.blockTimestamp = Number(object.blockTimestamp);
@@ -171,7 +171,7 @@ export const SushiLiquidity = {
     ) {
       message.contractAddress = object.contractAddress;
     } else {
-      message.contractAddress = "";
+      message.contractAddress = '';
     }
     if (object.baseDecimals !== undefined && object.baseDecimals !== null) {
       message.baseDecimals = object.baseDecimals;
@@ -181,7 +181,7 @@ export const SushiLiquidity = {
     if (object.baseReserve !== undefined && object.baseReserve !== null) {
       message.baseReserve = object.baseReserve;
     } else {
-      message.baseReserve = "";
+      message.baseReserve = '';
     }
     if (object.quoteDecimals !== undefined && object.quoteDecimals !== null) {
       message.quoteDecimals = object.quoteDecimals;
@@ -191,7 +191,7 @@ export const SushiLiquidity = {
     if (object.quoteReserve !== undefined && object.quoteReserve !== null) {
       message.quoteReserve = object.quoteReserve;
     } else {
-      message.quoteReserve = "";
+      message.quoteReserve = '';
     }
     if (object.blockTimestamp !== undefined && object.blockTimestamp !== null) {
       message.blockTimestamp = object.blockTimestamp;
@@ -202,14 +202,14 @@ export const SushiLiquidity = {
   },
 };
 
-const baseBlockSushiLiquidity: object = { blockNumber: "" };
+const baseBlockSushiLiquidity: object = { blockNumber: '' };
 
 export const BlockSushiLiquidity = {
   encode(
     message: BlockSushiLiquidity,
-    writer: Writer = Writer.create()
+    writer: Writer = Writer.create(),
   ): Writer {
-    if (message.blockNumber !== "") {
+    if (message.blockNumber !== '') {
       writer.uint32(10).string(message.blockNumber);
     }
     for (const v of message.liquidity) {
@@ -231,7 +231,7 @@ export const BlockSushiLiquidity = {
           break;
         case 2:
           message.liquidity.push(
-            SushiLiquidity.decode(reader, reader.uint32())
+            SushiLiquidity.decode(reader, reader.uint32()),
           );
           break;
         default:
@@ -248,7 +248,7 @@ export const BlockSushiLiquidity = {
     if (object.blockNumber !== undefined && object.blockNumber !== null) {
       message.blockNumber = String(object.blockNumber);
     } else {
-      message.blockNumber = "";
+      message.blockNumber = '';
     }
     if (object.liquidity !== undefined && object.liquidity !== null) {
       for (const e of object.liquidity) {
@@ -264,7 +264,7 @@ export const BlockSushiLiquidity = {
       (obj.blockNumber = message.blockNumber);
     if (message.liquidity) {
       obj.liquidity = message.liquidity.map((e) =>
-        e ? SushiLiquidity.toJSON(e) : undefined
+        e ? SushiLiquidity.toJSON(e) : undefined,
       );
     } else {
       obj.liquidity = [];
@@ -278,7 +278,7 @@ export const BlockSushiLiquidity = {
     if (object.blockNumber !== undefined && object.blockNumber !== null) {
       message.blockNumber = object.blockNumber;
     } else {
-      message.blockNumber = "";
+      message.blockNumber = '';
     }
     if (object.liquidity !== undefined && object.liquidity !== null) {
       for (const e of object.liquidity) {
@@ -292,11 +292,11 @@ export const BlockSushiLiquidity = {
 declare var self: any | undefined;
 declare var window: any | undefined;
 var globalThis: any = (() => {
-  if (typeof globalThis !== "undefined") return globalThis;
-  if (typeof self !== "undefined") return self;
-  if (typeof window !== "undefined") return window;
-  if (typeof global !== "undefined") return global;
-  throw "Unable to locate global object";
+  if (typeof globalThis !== 'undefined') return globalThis;
+  if (typeof self !== 'undefined') return self;
+  if (typeof window !== 'undefined') return window;
+  if (typeof global !== 'undefined') return global;
+  throw 'Unable to locate global object';
 })();
 
 type Builtin =
@@ -319,7 +319,7 @@ export type DeepPartial<T> = T extends Builtin
 
 function longToNumber(long: Long): number {
   if (long.gt(Number.MAX_SAFE_INTEGER)) {
-    throw new globalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
+    throw new globalThis.Error('Value is larger than Number.MAX_SAFE_INTEGER');
   }
   return long.toNumber();
 }
