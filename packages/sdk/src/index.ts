@@ -7,8 +7,18 @@
  */
 
 export * from './action';
-export { systemConfigIdFromJSON, bundleSourceIdFromJSON, BundleSourceId, Miner, MinerRelaySystemConfig, SystemConfig, MarketContract, SushiLiquidityPair, UniLiquidityPair} from './config';
+export {
+  systemConfigIdFromJSON,
+  bundleSourceIdFromJSON,
+  BundleSourceId,
+  Miner,
+  MinerRelaySystemConfig,
+  SystemConfig,
+  MarketContract,
+  SushiLiquidityPair,
+  UniLiquidityPair,
+} from './config';
 export { GasPrices, EstimatedGasPrice, BlockPrice } from './gas';
-export { SushiLiquidity, BlockSushiLiquidity} from './sushi';
+export { SushiLiquidity, BlockSushiLiquidity } from './sushi';
 export { UniLiquidity, BlockUniLiquidity } from './uni';
 export { rawBody } from './rawBody';

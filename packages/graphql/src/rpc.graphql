@@ -12,7 +12,16 @@ type SendTransaction {
   transaction: eth_Transaction
   action: SendTransaction_action
 }
-union SendTransaction_action = action_SwapExactTokensForTokens | action_SwapTokensForExactTokens | action_SwapExactETHForTokens | action_SwapTokensForExactETH | action_SwapExactTokensForETH | action_SwapETHForExactTokens | action_SwapExactTokensForTokensSupportingFeeOnTransferTokens | action_SwapExactETHForTokensSupportingFeeOnTransferTokens | action_SwapExactTokensForETHSupportingFeeOnTransferTokens
+union SendTransaction_action =
+    action_SwapExactTokensForTokens
+  | action_SwapTokensForExactTokens
+  | action_SwapExactETHForTokens
+  | action_SwapTokensForExactETH
+  | action_SwapExactTokensForETH
+  | action_SwapETHForExactTokens
+  | action_SwapExactTokensForTokensSupportingFeeOnTransferTokens
+  | action_SwapExactETHForTokensSupportingFeeOnTransferTokens
+  | action_SwapExactTokensForETHSupportingFeeOnTransferTokens
 type eth_AccountKey {
   address: String
 }
@@ -189,8 +198,20 @@ union eth_Transaction__blockHash = String
 union eth_Transaction__blockNumber = String
 union eth_Transaction__gasPrice = String
 union eth_Transaction__receipt = eth_TransactionReceipt
-union eth_Transaction_payload = eth_FrontierTransaction | eth_EIP2930Transaction | eth_EIP1559Transaction
-union eth_Transaction_action = action_SwapExactTokensForTokens | action_SwapTokensForExactTokens | action_SwapExactETHForTokens | action_SwapTokensForExactETH | action_SwapExactTokensForETH | action_SwapETHForExactTokens | action_SwapExactTokensForTokensSupportingFeeOnTransferTokens | action_SwapExactETHForTokensSupportingFeeOnTransferTokens | action_SwapExactTokensForETHSupportingFeeOnTransferTokens
+union eth_Transaction_payload =
+    eth_FrontierTransaction
+  | eth_EIP2930Transaction
+  | eth_EIP1559Transaction
+union eth_Transaction_action =
+    action_SwapExactTokensForTokens
+  | action_SwapTokensForExactTokens
+  | action_SwapExactETHForTokens
+  | action_SwapTokensForExactETH
+  | action_SwapExactTokensForETH
+  | action_SwapETHForExactTokens
+  | action_SwapExactTokensForTokensSupportingFeeOnTransferTokens
+  | action_SwapExactETHForTokensSupportingFeeOnTransferTokens
+  | action_SwapExactTokensForETHSupportingFeeOnTransferTokens
 type eth_TransactionLogKey {
   transactionHash: String
   transactionIndex: Int

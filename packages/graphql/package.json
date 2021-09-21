@@ -2,9 +2,11 @@
   "name": "@openmev/graphql",
   "version": "0.0.0",
   "description": "OpenMEV SDK",
-  "files": ["src/*", "schemas/*"],
-  "scripts": {
-  },
+  "files": [
+    "src/*",
+    "schemas/*"
+  ],
+  "scripts": {},
   "keywords": [
     "ethereum",
     "defi",
@@ -20,6 +22,5 @@
     "url": "git+https://github.com/manifoldfinance/openmev-sdk.git",
     "directory": "packages/graphql"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
