@@ -2,6 +2,9 @@
   "name": "@openmev/sushiswap",
   "version": "0.1.0",
   "description": "sushiswap",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
