@@ -1,0 +1,46 @@
+{
+  "name": "@openmev/sdk-connect",
+  "version": "0.0.0",
+  "description": "OpenMEV RPC Connection Module for Multiple RPC Endpoints",
+  "keywords": [
+    "mev",
+    "flashbots",
+    "ethers",
+    "web3",
+    "ethereum"
+  ],
+  "author": "Contributors <janitor@manifoldfinance.com>",
+  "homepage": "https://openmev.org",
+  "license": "Apache-2.0",
+  "main": "src/index.ts",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git"
+  },
+  "scripts": {
+    "test": "npx tsdx test",
+    "build": "npx tsdx build",
+    "prepublishOnly": "npx tsdx build"
+  },
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/openmev-sdk/issues"
+  },
+  "dependencies": {
+    "@ethersproject/bignumber": "^5.4.2",
+    "socket.io-client": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14",
+    "ts-node-dev": "^1.1.8",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1"
+  }
+}

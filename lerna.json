@@ -2,7 +2,5 @@
   "version": "4.8.8",
   "npmClient": "npm",
   "useWorkspaces": true,
-  "packages": [
-    "packages/*"
-  ]
+  "packages": ["packages/*"]
 }
