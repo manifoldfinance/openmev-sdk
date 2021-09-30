@@ -77,9 +77,8 @@ This file does something and its purpose is to do abc.
 
 ## License
 
-Released under [MIT](/LICENSE) by
+Released under [MPL-2.0](/LICENSE) by
 [@manifoldfinance](https://github.com/manifoldfinance).
 
-SPDX-License-Identifier: Apache-2.0
 
 <!-- Additional information for licenses should be in the SPDX- format -->
