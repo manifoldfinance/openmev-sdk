@@ -1,17 +1,3 @@
-<!-- START pkgtoc, keep to allow update -->
-
-**Packages**
-
-| Package                                           | Description                                              |
-| :------------------------------------------------ | :------------------------------------------------------- |
-| **[@openmev/graphql](packages/graphql/)**         | OpenMEV SDK                                              |
-| **[@openmev/protobufs](packages/protobufs/)**     |                                                          |
-| **[@openmev/sdk](packages/sdk/)**                 | OpenMEV SDK                                              |
-| **[@openmev/sdk-connect](packages/sdk-connect/)** | OpenMEV RPC Connection Module for Multiple RPC Endpoints |
-| **[@openmev/sushiswap](packages/sushi/)**         | sushiswap                                                |
-
-<!-- END pkgtoc, keep to allow update -->
-
 <span align="center">
 
 
@@ -26,6 +12,22 @@
 [docs.openmev.org](https://docs.openmev.org)
 
 </span>
+
+## Packages Overview
+
+<!-- START pkgtoc, keep to allow update -->
+
+**Packages**
+
+| Package                                           | Description                                              |
+| :------------------------------------------------ | :------------------------------------------------------- |
+| **[@openmev/graphql](packages/graphql/)**         | GraphQL Schema and Utils                                 |
+| **[@openmev/protobufs](packages/protobufs/)**     | Protobuf Definitions                                     |
+| **[@openmev/sdk](packages/sdk/)**                 | OpenMEV SDK for Ethers.js                                |
+| **[@openmev/sdk-connect](packages/sdk-connect/)** | OpenMEV RPC Connection Module for Multiple RPC Endpoints |
+| **[@openmev/sushiswap](packages/sushi/)**         | OpenMEV SushiSwap Adapter                                |
+
+<!-- END pkgtoc, keep to allow update -->
 
 ## API
 
