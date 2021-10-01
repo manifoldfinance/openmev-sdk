@@ -22,6 +22,7 @@
     "@microsoft/api-documenter": "^7.13.49",
     "@microsoft/api-extractor": "^7.18.9",
     "oao": "^2.0.2",
+    "pkgtoc": "^0.5.1",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.2.4",
     "webpack": "^5.52.1"

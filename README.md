@@ -1,3 +1,17 @@
+<!-- START pkgtoc, keep to allow update -->
+
+**Packages**
+
+| Package                                           | Description                                              |
+| :------------------------------------------------ | :------------------------------------------------------- |
+| **[@openmev/graphql](packages/graphql/)**         | OpenMEV SDK                                              |
+| **[@openmev/protobufs](packages/protobufs/)**     |                                                          |
+| **[@openmev/sdk](packages/sdk/)**                 | OpenMEV SDK                                              |
+| **[@openmev/sdk-connect](packages/sdk-connect/)** | OpenMEV RPC Connection Module for Multiple RPC Endpoints |
+| **[@openmev/sushiswap](packages/sushi/)**         | sushiswap                                                |
+
+<!-- END pkgtoc, keep to allow update -->
+
 <span align="center">
 
 
