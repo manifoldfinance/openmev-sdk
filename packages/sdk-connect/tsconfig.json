@@ -1,7 +1,8 @@
 {
-  "include": ["src", "test"],
+  "include": ["src"],
   "compilerOptions": {
     "target": "es2018",
+   "downlevelIteration": true,
     "module": "esnext",
     "importHelpers": true,
     "declaration": true,

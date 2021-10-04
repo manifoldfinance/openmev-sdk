@@ -1,6 +1,6 @@
 {
   "name": "@openmev/sdk-connect",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "OpenMEV RPC Connection Module for Multiple RPC Endpoints",
   "keywords": [
     "mev",
@@ -12,7 +12,9 @@
   "author": "Contributors <janitor@manifoldfinance.com>",
   "homepage": "https://openmev.org",
   "license": "Apache-2.0",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist/openmev-connect.esm.js",
   "directories": {
     "src": "src",
     "test": "__tests__"
@@ -42,5 +44,8 @@
     "ts-node-dev": "^1.1.8",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
