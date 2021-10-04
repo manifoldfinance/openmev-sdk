@@ -2,7 +2,7 @@
   "include": ["src"],
   "compilerOptions": {
     "target": "es2018",
-   "downlevelIteration": true,
+    "downlevelIteration": true,
     "module": "esnext",
     "importHelpers": true,
     "declaration": true,

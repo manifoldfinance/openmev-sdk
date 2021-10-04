@@ -1,6 +1,6 @@
 {
   "name": "@openmev/sdk-connect",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "OpenMEV RPC Connection Module for Multiple RPC Endpoints",
   "keywords": [
     "mev",
@@ -10,7 +10,7 @@
     "ethereum"
   ],
   "author": "Contributors <janitor@manifoldfinance.com>",
-  "homepage": "https://openmev.org",
+  "homepage": "https://github.com/manifoldfinance/openmev-sdk/tree/master/packages/sdk-connect",
   "license": "Apache-2.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -35,9 +35,10 @@
   "bugs": {
     "url": "https://github.com/manifoldfinance/openmev-sdk/issues"
   },
- "homepage": "https://github.com/manifoldfinance/openmev-sdk/tree/master/packages/sdk-connect",
   "dependencies": {
     "@ethersproject/bignumber": "^5.4.2",
+    "@ethersproject/bytes": "^5.4.0",
+    "@ethersproject/providers": "^5.4.5",
     "socket.io-client": "^4.2.0"
   },
   "devDependencies": {

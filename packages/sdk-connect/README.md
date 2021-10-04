@@ -1,6 +1,4 @@
-# `sdk-connect`
-
-> TODO: description
+# `@openmev/sdk-connect`
 
 ## Usage
 

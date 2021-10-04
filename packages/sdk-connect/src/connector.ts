@@ -1,24 +1,13 @@
 import { io, Socket } from 'socket.io-client';
 import { BigNumberish } from '@ethersproject/bignumber';
-
+import { getDefaultProvider } from '@ethersproject/providers';
+// import { hexDataLength, hexDataSlice, hexlify } from '@ethersproject/bytes'
+// import { defaultAbiCoder } from '@ethersproject/abi';
 
 const defaultServerUrl = 'https://api.sushirelay.com/v1';
+const JSONRPC_URL = 'https://api.staging.sushirelay.com/v1';
 const tokenKey = `SESSION_TOKEN`;
-
-
-export async function tryGetRevertReason(to: string, from: string, data: string): Promise<string | undefined> {
-  const provider = ethers.getDefaultProvider();
-  const tx = { to, from, data };
-  try {
-    await provider.estimateGas(tx);
-  } catch {
-    const value = await provider.call(tx);
-    return hexDataLength(value) % 32 === 4 && hexDataSlice(value, 0, 4) === '0x08c379a0'
-      ? defaultAbiCoder.decode(['string'], hexDataSlice(value, 4))
-      : undefined;
-  }
-  return undefined;
-}
+export const provider = getDefaultProvider(JSONRPC_URL);
 
 export enum Event {
   FEES_CHANGE = 'FEES_CHANGE',
@@ -79,22 +68,32 @@ export interface SocketSession {
   version: OpenMEVsemver | undefined;
 }
 
+/**
+ * @export
+ * @interface TransactionReq
+ */
 export interface TransactionReq {
   serialized: string;
-  raw: SwapReq | undefined;
+  raw: SwapRequest | undefined;
   estimatedGas?: number;
   estimatedEffectiveGasPrice?: number;
 }
-
+/**
+ * @export
+ * @interface TransactionProcessed
+ */
 export interface TransactionProcessed {
   serialized: string;
   bundle: string;
-  raw: SwapReq | undefined;
+  raw: SwapRequest | undefined;
   estimatedGas: number;
   estimatedEffectiveGasPrice: number;
 }
-
-export interface BundleReq {
+/**
+ * @export
+ * @interface BundleRequest
+ */
+export interface BundleRequest {
   transactions: TransactionReq[] | string[];
   chainId?: number;
   bribe?: string;
@@ -104,10 +103,10 @@ export interface BundleReq {
 }
 
 /**
-* 
-* @interface SwapRequest
-* @param {amount0, amount1, path, to}
-*/
+ *
+ * @interface SwapRequest
+ * @param {amount0, amount1, path, to}
+ */
 export interface SwapRequest {
   amount0: BigNumberish;
   amount1: BigNumberish;
@@ -115,11 +114,10 @@ export interface SwapRequest {
   to: string;
 }
 
-
 /**
-*
-* @interface Backrun
-*/
+ * @export
+ * @interface Backrun
+ */
 export interface Backrun {
   best: {
     backrunner: string;
@@ -134,9 +132,9 @@ export interface Backrun {
 }
 
 /**
-*
-* @interface BundleProcessed
-*/
+ *
+ * @interface BundleProcessed
+ */
 export interface BundleProcessed {
   id: string;
   transactions: TransactionProcessed[];
@@ -153,9 +151,9 @@ export interface BundleProcessed {
 }
 
 /**
-*
-* @interface BundleProcessed
-*/
+ *
+ * @interface BundleProcessed
+ */
 export interface BundleResponse {
   bundle: BundleProcessed;
   status: string;
@@ -172,15 +170,19 @@ export interface BundleResponseApi {
   message: string;
   error: string;
 }
-
+/**
+ * @interface QuoteEventsMap
+ */
 interface QuoteEventsMap {
   [Event.SOCKET_SESSION]: (response: SocketSession) => void;
   [Event.SOCKET_ERR]: (err: any) => void;
   [Event.FEES_CHANGE]: (response: Fees) => void;
   [Event.BUNDLE_REQUEST]: (response: any) => void;
   [Event.OPENMEV_BUNDLE_REQUEST]: (response: any) => void;
-  [Event.BUNDLE_RESPONSE]: (response: BundleRes | BundleResApi) => void;
-  [Event.BUNDLE_REPLACE_REQUEST]: (serialized: any) => void;
+  [Event.BUNDLE_RESPONSE]: (
+    response: BundleResponse | BundleResponseApi,
+  ) => void;
+  [Event.BUNDLE_CANCEL_REQUEST]: (serialized: any) => void;
   [Event.BUNDLE_STATUS_REQUEST]: (serialized: any) => void;
 }
 
@@ -191,9 +193,10 @@ interface SocketOptions {
   onError?: (err: any) => void;
   onFeesChange?: (fees: Fees) => void;
   onSocketSession?: (session: any) => void;
-  onTransactionResponse?: (response: BundleRes | BundleResApi) => void;
+  onTransactionResponse?: (
+    response: BundleResponse | BundleResponseApi,
+  ) => void;
 }
-
 
 export class OpenMEVSocket {
   private socket: Socket<QuoteEventsMap, QuoteEventsMap>;
@@ -232,22 +235,20 @@ export class OpenMEVSocket {
     onSocketSession,
     onTransactionResponse,
   }: SocketOptions): () => void {
-
-    
-  /**
-   *
-   * @event onConnect
-   *
-   */
+    /**
+     *
+     * @event onConnect
+     *
+     */
     this.socket.on('connect', () => {
       if (onConnect) onConnect();
     });
 
     /**
-    *
-    * @event onConnectError
-    *
-    */
+     *
+     * @event onConnectError
+     *
+     */
     this.socket.on('connect_error', (err: any) => {
       if (onConnectError) onConnectError(err);
     });
@@ -287,7 +288,7 @@ export class OpenMEVSocket {
      */
     this.socket.on(
       Event.BUNDLE_RESPONSE,
-      (response: BundleRes | BundleResApi) => {
+      (response: BundleResponse | BundleResponseApi) => {
         if (onTransactionResponse) onTransactionResponse(response);
       },
     );
@@ -300,11 +301,11 @@ export class OpenMEVSocket {
     };
   }
 
-  public emitBundleRequest(bundle: BundleReq) {
+  public emitBundleRequest(bundle: BundleRequest) {
     this.socket.emit(Event.BUNDLE_REQUEST, bundle);
   }
 
-  public emitTransactionRequest(bundle: BundleReq) {
+  public emitTransactionRequest(bundle: BundleRequest) {
     this.socket.emit(Event.OPENMEV_BUNDLE_REQUEST, bundle);
   }
 
@@ -313,8 +314,24 @@ export class OpenMEVSocket {
   }
 
   public emitTransactionCancellation(id: string) {
-    this.socket.emit(Event.BUNDLE_REPLACE_REQUEST, { id });
+    this.socket.emit(Event.BUNDLE_CANCEL_REQUEST, { id });
   }
 }
+
+/*
+export async function tryGetRevertReason(to: string, from: string, data: string): Promise<string | undefined> {
+  const provider = getDefaultProvider();
+  const tx = { to, from, data };
+  try {
+    await provider.estimateGas(tx);
+  } catch {
+    const value = await provider.call(tx);
+    return hexDataLength(value) % 32 === 4 && hexDataSlice(value, 0, 4) === '0x08c379a0'
+      ? defaultAbiCoder.decode(['string'], hexDataSlice(value, 4))
+      : undefined;
+  }
+  return undefined;
+}
+*/
 
 /** @exports connector */
