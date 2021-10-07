@@ -1,6 +1,5 @@
 <span align="center">
 
-
 # @openmev/sdk
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/c4566fcdc50a49eba6e07264443bd5c0)](https://www.codacy.com/gh/manifoldfinance/openmev-sdk/dashboard?utm_source=github.com&utm_medium=referral&utm_content=manifoldfinance/openmev-sdk&utm_campaign=Badge_Grade)
@@ -24,35 +23,34 @@
 
 ## TransactionSimulationBase
 
-| name | type | optional | default | description |
-| - | - | - | - | - |
-| txHash | `string` | `false` | `n/a` |  |
-| gasUsed | `number` | `false` | `n/a` |  |
-
+| name    | type     | optional | default | description |
+| ------- | -------- | -------- | ------- | ----------- |
+| txHash  | `string` | `false`  | `n/a`   |             |
+| gasUsed | `number` | `false`  | `n/a`   |             |
 
 ## OpenMevBundle
 
-| name | type | optional | default | description |
-| - | - | - | - | - |
-| signedBundledTransactions | `string[]` | `false` | `n/a` |  |
-| blockTarget | `number` | `false` | `n/a` |  |
-| options | `FlashbotsOptions \| undefined` | `true` | `n/a` |  |
+| name                      | type                            | optional | default | description |
+| ------------------------- | ------------------------------- | -------- | ------- | ----------- |
+| signedBundledTransactions | `string[]`                      | `false`  | `n/a`   |             |
+| blockTarget               | `number`                        | `false`  | `n/a`   |             |
+| options                   | `FlashbotsOptions \| undefined` | `true`   | `n/a`   |             |
 
 ## FlashbotsBundleTransaction
 
-| name | type | optional | default | description |
-| - | - | - | - | - |
-| transaction | `TransactionRequest` | `false` | `n/a` |  |
-| signer | `Signer` | `false` | `n/a` |  |
+| name        | type                 | optional | default | description |
+| ----------- | -------------------- | -------- | ------- | ----------- |
+| transaction | `TransactionRequest` | `false`  | `n/a`   |             |
+| signer      | `Signer`             | `false`  | `n/a`   |             |
 
 ## RpcParams
 
-| name | type | optional | default | description |
-| - | - | - | - | - |
-| manifold_Relay | `number` | `false` | `n/a` | Relay simulates bundles before sending to miners which can take a small amount of time. The relay cannot determine which bundles are profitable without performing a full simulation.  |
-| eth_sendMegaBundle | `Array[String], A list of signed transactions to execute in an atomic bundle` | `false` | `n/a` | ethSendMegaBundle can be used to send your bundles to the relay. |
-| eth_callBundle | `Array[String], A list of signed transactions to execute in an atomic bundle` | `false` | `n/a` | eth_callBundle can be used to simulate a bundle against a specific block number, including simulating a bundle at the top of the next block.  |
-| eth_sendBundle | `() => string \| number \| string[] \| Record<string, unknown> \| undefined` | `false` | `n/a` | SendBundle can be used to send your bundles to the relay.
+| name               | type                                                                          | optional | default | description                                                                                                                                                                           |
+| ------------------ | ----------------------------------------------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| manifold_Relay     | `number`                                                                      | `false`  | `n/a`   | Relay simulates bundles before sending to miners which can take a small amount of time. The relay cannot determine which bundles are profitable without performing a full simulation. |
+| eth_sendMegaBundle | `Array[String], A list of signed transactions to execute in an atomic bundle` | `false`  | `n/a`   | ethSendMegaBundle can be used to send your bundles to the relay.                                                                                                                      |
+| eth_callBundle     | `Array[String], A list of signed transactions to execute in an atomic bundle` | `false`  | `n/a`   | eth_callBundle can be used to simulate a bundle against a specific block number, including simulating a bundle at the top of the next block.                                          |
+| eth_sendBundle     | `() => string \| number \| string[] \| Record<string, unknown> \| undefined`  | `false`  | `n/a`   | SendBundle can be used to send your bundles to the relay.                                                                                                                             |
 
 ## SDK Packages
 
@@ -91,7 +89,6 @@ This file does something and its purpose is to do abc.
 
 [Improvement Change Log](CHANGELOG.md)
 
-
 ## Support
 
 > Where can I get help?
@@ -105,11 +102,9 @@ This file does something and its purpose is to do abc.
 | ---------------- | --------------------------- |
 | Security         | reports@manifoldfinance.com |
 
-
 ## License
 
 Released under [MPL-2.0](/LICENSE) by
 [@manifoldfinance](https://github.com/manifoldfinance).
-
 
 <!-- Additional information for licenses should be in the SPDX- format -->

@@ -1,1 +1,1 @@
-export * from './opensigner'
+export * from './opensigner';
