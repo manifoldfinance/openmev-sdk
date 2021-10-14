@@ -2,11 +2,16 @@ import Web3 from "web3";
 
 //  Create Web3 instance
 const web3 = new Web3(provider);
-
+const Web3HttpProvider = require('web3-providers-http');
 
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-//  Create WalletConnect Provider
+/**
+ * @const provider
+ * Create WalletConnect Provider
+ *
+ *
+*/
 const provider = new WalletConnectProvider({
   rpc: {
     1: "https://api.staging.sushirelay.com/v1"

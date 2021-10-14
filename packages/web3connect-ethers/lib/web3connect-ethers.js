@@ -1,4 +1,4 @@
-import { providers } from "ethers";
+import * as providers from "@ethersproject/providers"
 
 //  Wrap with Web3Provider from ethers.js
 const web3Provider = new providers.Web3Provider(provider);
@@ -6,7 +6,12 @@ const web3Provider = new providers.Web3Provider(provider);
 
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-//  Create WalletConnect Provider
+/**
+ * @const provider
+ * Create WalletConnect Provider
+ *
+ *
+*/
 const provider = new WalletConnectProvider({
   rpc: {
     1: "https://api.staging.sushirelay.com/v1"
