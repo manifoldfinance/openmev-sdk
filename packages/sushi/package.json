@@ -1,12 +1,11 @@
 {
   "name": "@openmev/sushiswap",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "description": "sushiswap",
   "publishConfig": {
     "access": "public"
   },
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

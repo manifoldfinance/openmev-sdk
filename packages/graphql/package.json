@@ -1,6 +1,6 @@
 {
   "name": "@openmev/graphql",
-  "version": "0.0.0",
+  "version": "0.2.2",
   "description": "OpenMEV SDK",
   "files": [
     "src/*",
@@ -21,6 +21,5 @@
     "type": "git",
     "url": "git+https://github.com/manifoldfinance/openmev-sdk.git",
     "directory": "packages/graphql"
-  },
-  "devDependencies": {}
+  }
 }
