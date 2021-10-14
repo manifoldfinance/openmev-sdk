@@ -22,5 +22,9 @@
   },
   "bugs": {
     "url": "https://github.com/manifoldfinance/openmev-sdk/issues"
+  },
+  "dependencies": {
+    "@ethersproject/providers": "^5.4.5",
+    "@walletconnect/web3-provider": "^1.6.6"
   }
 }
