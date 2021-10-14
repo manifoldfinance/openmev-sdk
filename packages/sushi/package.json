@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/manifoldfinance/openmev-sdk/issues"
   },
-  "homepage": "https://github.com/manifoldfinance/openmev-sdk#readme"
+  "homepage": "https://github.com/manifoldfinance/openmev-sdk#readme",
+  "gitHead": "fc44fce7e2b0df20cca193a5210929ffca1ad725"
 }

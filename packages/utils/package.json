@@ -60,5 +60,6 @@
     "@ethersproject/abstract-provider": "^5.4.1",
     "@ethersproject/providers": "^5.4.5",
     "@ethersproject/strings": "^5.4.0"
-  }
+  },
+  "gitHead": "fc44fce7e2b0df20cca193a5210929ffca1ad725"
 }
