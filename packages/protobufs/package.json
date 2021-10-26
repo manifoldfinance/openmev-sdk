@@ -1,6 +1,6 @@
 {
   "name": "@openmev/protobufs",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "main": "index.js",
   "files": [
     "src/*.proto"

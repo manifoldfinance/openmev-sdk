@@ -1,6 +1,6 @@
 {
   "name": "@openmev/sdk-connect",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "OpenMEV RPC Connection Module for Multiple RPC Endpoints",
   "keywords": [
     "mev",

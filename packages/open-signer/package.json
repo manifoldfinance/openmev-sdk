@@ -1,6 +1,6 @@
 {
   "name": "@openmev/open-signer",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "@openmev account abstraction signer",
   "author": "sam bacha <sam@manifoldfinance.com>",
   "homepage": "https://github.com/manifoldfinance/openmev-sdk#readme",

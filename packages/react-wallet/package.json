@@ -1,6 +1,6 @@
 {
   "name": "@openmev/react-wallet",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "react hook for wallet providers with integrated frontrunning/flashbots support",
   "module": "dist/react-wallet.esm.js",
   "license": "SEE LICENSE IN LICENSE",
