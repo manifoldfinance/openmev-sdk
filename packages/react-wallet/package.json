@@ -1,0 +1,80 @@
+{
+  "name": "@openmev/react-wallet",
+  "version": "0.2.2",
+  "description": "react hook for wallet providers with integrated frontrunning/flashbots support",
+  "module": "dist/react-wallet.esm.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "peerDependencies": {
+    "react": ">=16 || >=17"
+  },
+  "size-limit": [
+    {
+      "path": "dist/react-wallet.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/react-wallet.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "keywords": [
+    "mev",
+    "flashbots",
+    "ethereum",
+    "react",
+    "wallet",
+    "web3",
+    "use",
+    "wallet",
+    "web3",
+    "react"
+  ],
+  "author": "sam bacha <sam@manifoldfinance.com>",
+  "homepage": "https://github.com/manifoldfinance/openmev-sdk",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__",
+    "src": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/openmev-sdk/issues"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^6.0.3",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "size-limit": "^6.0.3",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@ethersproject/providers": "^5.5.0",
+    "web3modal": "^1.9.4",
+    "zustand": "^3.6.1"
+  }
+}
