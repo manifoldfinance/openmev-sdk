@@ -14,7 +14,7 @@ import { getDefaultProvider } from '@ethersproject/providers';
  */
 const defaultServerUrl = 'https://api.sushirelay.com/v1';
 const JSON_RPC_URL = 'https://api.staging.sushirelay.com/v1';
-const RPC_URL = process.env.RPC_URL
+const RPC_URL = process.env.RPC_URL;
 const tokenKey = `SESSION_TOKEN`;
 
 /**
@@ -22,7 +22,7 @@ const tokenKey = `SESSION_TOKEN`;
  * @const getDefaultProvider
  * @
  */
-export const provider = getDefaultProvider(JSON_RPC_URL || RPC_URL );
+export const provider = getDefaultProvider(JSON_RPC_URL || RPC_URL);
 
 export enum Event {
   FEES_CHANGE = 'FEES_CHANGE',
@@ -74,38 +74,38 @@ export enum Debug {
 }
 
 export type ConnectionInfo = {
-  url: string,
-  headers?: { [key: string]: string | number }
+  url: string;
+  headers?: { [key: string]: string | number };
 
-  user?: string,
-  password?: string,
+  user?: string;
+  password?: string;
 
-  allowInsecureAuthentication?: boolean,
-  allowGzip?: boolean,
+  allowInsecureAuthentication?: boolean;
+  allowGzip?: boolean;
 
-  throttleLimit?: number,
+  throttleLimit?: number;
   throttleSlotInterval?: number;
-  throttleCallback?: (attempt: number, url: string) => Promise<boolean>,
+  throttleCallback?: (attempt: number, url: string) => Promise<boolean>;
 
-  timeout?: number,
+  timeout?: number;
 };
 
 export interface OnceBlockable {
-  once(eventName: "block", handler: () => void): void;
+  once(eventName: 'block', handler: () => void): void;
 }
 
 export interface OncePollable {
-  once(eventName: "poll", handler: () => void): void;
+  once(eventName: 'poll', handler: () => void): void;
 }
 
 export type PollOptions = {
-  timeout?: number,
-  floor?: number,
-  ceiling?: number,
-  interval?: number,
-  retryLimit?: number,
-  onceBlock?: OnceBlockable
-  oncePoll?: OncePollable
+  timeout?: number;
+  floor?: number;
+  ceiling?: number;
+  interval?: number;
+  retryLimit?: number;
+  onceBlock?: OnceBlockable;
+  oncePoll?: OncePollable;
 };
 
 export interface platformVersion {

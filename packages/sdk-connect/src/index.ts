@@ -5,8 +5,6 @@
  * @export connector
  * @since v0.3.0
  */
-import {
-  OpenMEVSocket
-} from './connector'
-export default OpenMEVSocket
+import { OpenMEVSocket } from './connector';
+export default OpenMEVSocket;
 //export * from './connector';

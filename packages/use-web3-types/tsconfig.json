@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "module": "ES2020",
+    "declaration": true,
+    "skipLibCheck": true,
+    "moduleResolution": "Node",
+      "outDir": "./dist"
+  },
+  "include": ["./src"],
+}

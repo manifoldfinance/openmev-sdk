@@ -52,39 +52,30 @@
 | eth_callBundle     | `Array[String], A list of signed transactions to execute in an atomic bundle` | `false`  | `n/a`   | eth_callBundle can be used to simulate a bundle against a specific block number, including simulating a bundle at the top of the next block.                                          |
 | eth_sendBundle     | `() => string \| number \| string[] \| Record<string, unknown> \| undefined`  | `false`  | `n/a`   | SendBundle can be used to send your bundles to the relay.                                                                                                                             |
 
-## SDK Packages
 
-_Packages._
 
-Click to see file details:
+```
+* Git status:
 
-<details>
-  <summary>Package</summary>
-  <br>
+    - Current branch: master
+    - Last tag: v0.3.2
+    - Uncommitted changes: YES
+    - Unpulled changes: no
 
-This file does something and its purpose is to do abc.
+* Subpackage status: [9 package/s, incl. root]
 
-  <hr>
-</details>
+    Name                                     Version        Private Changes Dependencies
+    @openmev/graphql                         0.3.0          NO      -       0
+    @openmev/open-signer                     0.3.0          NO      -       11 (+ 1 dev)
+    @openmev/protobufs                       0.3.0          NO      -       2 (+ 16 dev)
+    @openmev/sdk-connect                     0.3.0          NO      3       4 (+ 4 dev)
+    @openmev/sdk-relay                       0.3.0          NO      1       2 (+ 17 dev)
+    @openmev/sushiswap                       0.3.0          NO      1       0
+    use-react-wallet                         0.3.2          NO      21      3 (+ 12 dev)
+    @openmev/utils                           0.3.0          NO      -       3 (+ 23 dev)
+    Root                                     0.0.0          yes     N/A     0 (+ 11 dev)
 
-<details>
-  <summary>Protobufs</summary>
-  <br>
-
-This file deploys the contracts on `mainnet`
-
-  <hr>
-</details>
-
-<details>
-  <summary>SDK</summary>
-  <br>
-
-This file does something and its purpose is to do abc.
-
-  <hr>
-</details>
-
+```
 ## Changelog
 
 [Improvement Change Log](CHANGELOG.md)
@@ -104,7 +95,7 @@ This file does something and its purpose is to do abc.
 
 ## License
 
-Released under [MPL-2.0](/LICENSE) by
+Released under [Apache-2.0](/LICENSE) by
 [@manifoldfinance](https://github.com/manifoldfinance).
 
 <!-- Additional information for licenses should be in the SPDX- format -->
