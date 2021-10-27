@@ -18,8 +18,48 @@
 
 ## Documentation
 
-- [Manifold Finance Documentation](https://manifoldfinance.github.io/documentation/)
-- [OpenMEV API Documentation](https://documenter.getpostman.com/view/14127676/UUy1fSj2)
+- [Explore the new Developers Hub](https://manifoldfinance.github.io/hub/)
+- [See the Packages/ directory for additional specific docs](./packages/)
+
+## `use-react-wallet` - welltyped react hook with modern state management 
+
+
+#### Connect / Disconnect button
+
+```ts
+const ConnectWalletButton = () => {
+  const { account, connect, disconnect } = useWallet();
+  return (
+    <>
+      {!account ? (
+        <button onClick={() => connect()}>Connect Wallet</button>
+      ) : (
+        <button onClick={() => disconnect()}>Disconnect Wallet</button>
+      )}
+    </>
+  );
+};
+```
+
+##### Connecting
+
+The `connect` function passes along an optional config to a
+[Web3Modal instance for additional customization](https://github.com/Web3Modal/web3modal#usage).
+
+You can use the account information from useWallet anywhere inside your React
+app, without any extra set up.
+
+```ts
+const UserAddress = () => {
+  const { account } = useWallet();
+  if (!account) return null;
+  return <>{account}</>;
+};
+```
+
+> For more packages, go to the sub directory
+
+## Specification
 
 ## TransactionSimulationBase
 
