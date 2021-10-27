@@ -1,13 +1,28 @@
+/**
+ * @package OpenMevSocket
+ * @version 0.2.0
+ * @see docs.openmev.org
+ */
 import { io, Socket } from 'socket.io-client';
 import { BigNumberish } from '@ethersproject/bignumber';
 import { getDefaultProvider } from '@ethersproject/providers';
 // import { hexDataLength, hexDataSlice, hexlify } from '@ethersproject/bytes'
 // import { defaultAbiCoder } from '@ethersproject/abi';
-
+/**
+ * @configure JSON_RPC_URL is default
+ * @configure RPC_URL for failover
+ */
 const defaultServerUrl = 'https://api.sushirelay.com/v1';
-const JSONRPC_URL = 'https://api.staging.sushirelay.com/v1';
+const JSON_RPC_URL = 'https://api.staging.sushirelay.com/v1';
+const RPC_URL = process.env.RPC_URL
 const tokenKey = `SESSION_TOKEN`;
-export const provider = getDefaultProvider(JSONRPC_URL);
+
+/**
+ * @exports provider
+ * @const getDefaultProvider
+ * @
+ */
+export const provider = getDefaultProvider(JSON_RPC_URL || RPC_URL );
 
 export enum Event {
   FEES_CHANGE = 'FEES_CHANGE',
@@ -58,14 +73,49 @@ export enum Debug {
   ERROR_UNKNOWN = 'ERROR_UNKNOWN',
 }
 
-export interface OpenMEVsemver {
+export type ConnectionInfo = {
+  url: string,
+  headers?: { [key: string]: string | number }
+
+  user?: string,
+  password?: string,
+
+  allowInsecureAuthentication?: boolean,
+  allowGzip?: boolean,
+
+  throttleLimit?: number,
+  throttleSlotInterval?: number;
+  throttleCallback?: (attempt: number, url: string) => Promise<boolean>,
+
+  timeout?: number,
+};
+
+export interface OnceBlockable {
+  once(eventName: "block", handler: () => void): void;
+}
+
+export interface OncePollable {
+  once(eventName: "poll", handler: () => void): void;
+}
+
+export type PollOptions = {
+  timeout?: number,
+  floor?: number,
+  ceiling?: number,
+  interval?: number,
+  retryLimit?: number,
+  onceBlock?: OnceBlockable
+  oncePoll?: OncePollable
+};
+
+export interface platformVersion {
   api: number;
   client: string;
 }
 
 export interface SocketSession {
   token: string;
-  version: OpenMEVsemver | undefined;
+  version: platformVersion | any;
 }
 
 /**

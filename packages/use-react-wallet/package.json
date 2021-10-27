@@ -1,22 +1,22 @@
 {
   "name": "use-react-wallet",
-  "version": "0.3.0",
-  "description": "react hook for wallet providers with integrated frontrunning/flashbots support",
-  "module": "dist/react-wallet.esm.js",
+  "version": "0.3.1",
+  "description": "Well Typed React Hook for web3/wallet providers w/integrated frontrunning/flashbots support",
+  "module": "dist/use-react-wallet.esm.js",
   "license": "SEE LICENSE IN LICENSE",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "start": "npx tsdx watch",
+    "compile": "npx tsdx build",
+    "test": "npx tsdx test --passWithNoTests",
+    "lint": "npx tsdx lint",
     "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
+    "size": "npx size-limit",
+    "analyze": "npx size-limit --why"
   },
   "files": [
-    "lib",
+    "dist",
     "src"
   ],
   "peerDependencies": {
@@ -24,16 +24,17 @@
   },
   "size-limit": [
     {
-      "path": "dist/react-wallet.cjs.production.min.js",
+      "path": "dist/use-react-wallet.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/react-wallet.esm.js",
+      "path": "dist/use-react-wallet.esm.js",
       "limit": "10 KB"
     }
   ],
   "keywords": [
     "mev",
+    "zustand",
     "flashbots",
     "ethereum",
     "react",
@@ -47,7 +48,7 @@
   "author": "sam bacha <sam@manifoldfinance.com>",
   "homepage": "https://github.com/manifoldfinance/openmev-sdk",
   "directories": {
-    "lib": "lib",
+    "dist": "dist",
     "test": "__tests__",
     "src": "src"
   },
