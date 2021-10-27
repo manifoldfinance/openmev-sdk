@@ -1,6 +1,6 @@
 {
   "name": "use-react-wallet",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Well Typed React Hook for web3/wallet providers w/integrated frontrunning/flashbots support",
   "module": "dist/use-react-wallet.esm.js",
   "license": "SEE LICENSE IN LICENSE",
