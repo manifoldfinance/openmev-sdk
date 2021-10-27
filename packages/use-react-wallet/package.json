@@ -1,9 +1,9 @@
 {
   "name": "use-react-wallet",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "react hook for wallet providers with integrated frontrunning/flashbots support",
   "module": "dist/react-wallet.esm.js",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "Apache-2.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -53,7 +53,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git"
+    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git",
+    "directory": "packages/use-react-wallet"
   },
   "bugs": {
     "url": "https://github.com/manifoldfinance/openmev-sdk/issues"
