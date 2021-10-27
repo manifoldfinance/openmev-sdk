@@ -25,7 +25,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git"
+    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git",
+    "directory": "packages/sdk-connect"
   },
   "scripts": {
     "test": "npx tsdx test",

@@ -3,7 +3,7 @@
   "version": "0.3.2",
   "description": "Well Typed React Hook for web3/wallet providers w/integrated frontrunning/flashbots support",
   "module": "dist/use-react-wallet.esm.js",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "Apache-2.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -11,7 +11,6 @@
     "compile": "npx tsdx build",
     "test": "npx tsdx test --passWithNoTests",
     "lint": "npx tsdx lint",
-    "prepare": "tsdx build",
     "size": "npx size-limit",
     "analyze": "npx size-limit --why"
   },
@@ -61,6 +60,7 @@
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^6.0.3",
+    "@types/node": "^14",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "react": "^17.0.2",

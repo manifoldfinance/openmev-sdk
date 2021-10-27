@@ -22,10 +22,12 @@
     "solidity",
     "sdk",
     "mev",
-    "blockchain"
+    "blockchain",
+    "front running",
+    "flashbots"
   ],
   "author": "Manifold Finance, Inc <janitor@manifoldfinance.com>",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manifoldfinance/openmev-sdk.git",
