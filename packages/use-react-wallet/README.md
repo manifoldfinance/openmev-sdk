@@ -69,38 +69,28 @@ const SignMessageButton = () => {
 <!-- @START DOCUMENTATION -->
 
 
-# "API" | use-react-wallet
+## "API" | use-react-wallet
 
-> ## Excerpt
 > Documentation for use-react-wallet
 
----
 Public
 
 -   Public
 -   Public/Protected
 -   All
 
-Inherited Externals Only exported
----
-created: 2021-10-27T05:13:00 (UTC -07:00)
-tags: []
-source: ../web3reactstate.html
-author:
----
-
-# Web3ReactState | use-react-wallet
+## Web3ReactState | use-react-wallet
 
 > ## Excerpt
 > Documentation for use-react-wallet
 
----
+
 ### Hierarchy
 
 -   object
     -   Web3ReactState
 
-## Index
+### Index
 
 ### Properties
 
@@ -125,15 +115,9 @@ chainId: number | undefined
 
 ### error
 
-error: Error | undefined
----
-created: 2021-10-27T05:12:55 (UTC -07:00)
-tags: []
-source: ../web3reactstateupdate.html
-author:
----
+error: Error | undefined // FIXME
 
-# Web3ReactStateUpdate | use-react-wallet
+## Web3ReactStateUpdate | @use-react-wallet
 
 > ## Excerpt
 > Documentation for use-react-wallet
@@ -158,15 +142,10 @@ accounts: string\[\]
 
 ### Optional chainId
 
-chainId: undefined | number
----
-created: 2021-10-27T05:13:04 (UTC -07:00)
-tags: []
-source: ../requestarguments.html
-author:
----
+chainId: undefined | number // non-zero padded hex
 
-# RequestArguments | use-react-wallet
+
+## RequestArguments | @use-react-wallet
 
 > ## Excerpt
 > Documentation for use-react-wallet
@@ -191,20 +170,14 @@ method: string
 
 ### Optional Readonly params
 
-params: readonly unknown\[\] | object
----
-created: 2021-10-27T05:13:08 (UTC -07:00)
-tags: []
-source: ../provider.html
-author:
----
+params: readonly unknown[] | object
 
-# Provider | use-react-wallet
+## Provider | use-react-wallet
 
 > ## Excerpt
 > Documentation for use-react-wallet
 
----
+
 ### Hierarchy
 
 -   EventEmitter
@@ -570,7 +543,7 @@ errorMonitor: unique symbol
 
 
 
-# Connector | use-react-wallet
+## Connector | use-react-wallet
 
 > ## Excerpt
 > Documentation for use-react-wallet
