@@ -15590,6 +15590,6 @@ z-schema@~3.18.3:
     commander "^2.7.1"
 
 zustand@^3.6.1:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.6.1.tgz#d309074dd632ca7b14e20353e5c55274e3d72eda"
-  integrity sha512-2ghTWZhOx3xUK7drIa/1fVbuzyG70XKfCXIATrRBFDPcRRV4V/9uptNOKgyCvPwCDYgLpla4EtFbXNbdLpfPcw==
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.6.2.tgz#76bd927c8f82c14d7aae9f592323371b583e564a"
+  integrity sha512-Jw+tM8T3koFjwLLj8ihlYcMqp3nHfpRNOrc/qqwFhmVp7nmrBD/N73bEb5cjveFKNQtAt+7n2S+gnIbhrV/4qA==
