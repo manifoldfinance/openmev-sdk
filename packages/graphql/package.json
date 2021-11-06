@@ -22,5 +22,5 @@
     "url": "git+https://github.com/manifoldfinance/openmev-sdk.git",
     "directory": "packages/graphql"
   },
-  "gitHead": "fc44fce7e2b0df20cca193a5210929ffca1ad725"
+  "gitHead": "d3da39fe919f115abe38dc84113f82357de2bdea"
 }
