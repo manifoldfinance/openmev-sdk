@@ -3,3 +3,4 @@ utils/
 tools/
 .github/
 __dev__/
+test-dist/
