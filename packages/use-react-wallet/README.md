@@ -1,18 +1,23 @@
 # `use-react-wallet`
 
-> React hook for connecting and interacting with Web3 Wallet Providers via
-> OpenMEV RPC or any other RPC
+> React hook for connecting and interacting with Web3 Wallet Providers via  OpenMEV RPC or any other RPC
+
+* [Overview](#overview)
+    - [Connect or Disconnect button](#connect-or-disconnect-button)
+      * [Connecting](#connecting)
+      * [Transaction Signing](#transaction-signing)
+* [Experimental](#experimental)
+    - [Usage](#usage)
+* [License](#license)
+
 
 ## Overview
 
 - [Web3Modal](https://github.com/Web3Modal/web3modal)
 - [Zustand](https://github.com/pmndrs/zustand)
 
-### Examples
 
-- [see codesandbox](#)
-
-#### Connect / Disconnect button
+#### Connect or Disconnect button
 
 ```ts
 const ConnectWalletButton = () => {
@@ -65,14 +70,13 @@ const SignMessageButton = () => {
 }
 ```
 
-
 ### Experimental
 
 `useSafeTimeout` is a utility Hook that allows you to safely call `setTimeout`
 and `clearTimeout` within a component, ensuring that all timeouts are cleared
 when the component unmounts.
 
-### Usage
+#### Usage
 
 ```jsx live
 <State>
