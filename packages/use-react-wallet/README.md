@@ -13,11 +13,15 @@
 
 ## Overview
 
+`use-react-wallet` combines the following packages to provide an oppionanted react hook:
+
 - [Web3Modal](https://github.com/Web3Modal/web3modal)
 - [Zustand](https://github.com/pmndrs/zustand)
 
 
-#### Connect or Disconnect button
+#### Connectivity
+
+> Connect / Disconnect Button
 
 ```ts
 const ConnectWalletButton = () => {
@@ -52,11 +56,12 @@ const UserAddress = () => {
 
 ##### Transaction Signing
 
-To run a transaction or sign a message, use the `provider` object returned by
-the hook for connected wallets.
+To run a transaction or sign a message, use the `provider` object returned by the hook for connected wallets.
 
 This is a standard
 [Ethers.js Provider](https://docs.ethers.io/v5/api/providers/provider/).
+
+> Note Ethersjs has depreciated personal_sign methods
 
 ```ts
 const SignMessageButton = () => {
@@ -70,6 +75,10 @@ const SignMessageButton = () => {
 }
 ```
 
+## Unstable Features 
+
+> These features are a developer preview, and may incur breaking changes
+> 
 ### Experimental
 
 `useSafeTimeout` is a utility Hook that allows you to safely call `setTimeout`
