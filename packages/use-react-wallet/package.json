@@ -1,52 +1,41 @@
 {
   "name": "use-react-wallet",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Well Typed React Hook for web3/wallet providers w/integrated frontrunning/flashbots support",
-  "module": "dist/use-react-wallet.esm.js",
   "license": "Apache-2.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "start": "npx tsdx watch",
-    "compile": "npx tsdx build",
-    "test": "npx tsdx test --passWithNoTests",
-    "lint": "npx tsdx lint",
-    "size": "npx size-limit",
-    "analyze": "npx size-limit --why"
+    "build": "npx tsdx build",
+    "lint": "tsdx lint",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
   "peerDependencies": {
-    "react": "^17"
+    "react": ">=16"
   },
+  "module": "dist/use-react-wallet.esm.js",
   "size-limit": [
     {
       "path": "dist/use-react-wallet.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "300 KB"
     },
     {
       "path": "dist/use-react-wallet.esm.js",
-      "limit": "10 KB"
+      "limit": "300 KB"
     }
   ],
-  "keywords": [
-    "mev",
-    "zustand",
-    "flashbots",
-    "ethereum",
-    "react",
-    "wallet",
-    "web3",
-    "use",
-    "wallet",
-    "web3",
-    "react"
-  ],
-  "resolutions": {
-    "zustand": "^3.6.4",
-    "tsdx": "^0.14.1"
+  "dependencies": {
+    "@ethersproject/providers": "^5.5.0",
+    "web3modal": "^1.9.4",
+    "zustand": "^3.6.4"
   },
   "author": "sam bacha <sam@manifoldfinance.com>",
   "homepage": "https://github.com/manifoldfinance/openmev-sdk",
@@ -69,8 +58,8 @@
     "@testing-library/react-hooks": "^7.0.2",
     "@types/jest": "^27.0.2",
     "@types/node": "^16",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
     "@web3-react/types": "^8.0.7-alpha.0",
     "jest": "^27.3.1",
     "react": "^17.0.2",
@@ -84,11 +73,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@ethersproject/providers": "^5.5.0",
-    "web3modal": "^1.9.4",
-    "zustand": "^3.6.4"
   },
   "gitHead": "d3da39fe919f115abe38dc84113f82357de2bdea"
 }
