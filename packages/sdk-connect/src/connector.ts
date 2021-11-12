@@ -1,8 +1,9 @@
 /**
  * @package OpenMevSocket
- * @version 0.2.0
+ * @version 0.3.0
  * @see docs.openmev.org
  */
+
 import { io, Socket } from 'socket.io-client';
 import { BigNumberish } from '@ethersproject/bignumber';
 import { getDefaultProvider } from '@ethersproject/providers';
@@ -12,7 +13,7 @@ import { getDefaultProvider } from '@ethersproject/providers';
  * @configure JSON_RPC_URL is default
  * @configure RPC_URL for failover
  */
-const defaultServerUrl = 'https://api.sushirelay.com/v1';
+const defaultOpenMevRpc = 'https://api.sushirelay.com/v1';
 const JSON_RPC_URL = 'https://api.staging.sushirelay.com/v1';
 const RPC_URL = process.env.RPC_URL;
 const tokenKey = `SESSION_TOKEN`;
@@ -22,7 +23,7 @@ const tokenKey = `SESSION_TOKEN`;
  * @const getDefaultProvider
  * @
  */
-export const provider = getDefaultProvider(JSON_RPC_URL || RPC_URL);
+export const provider = getDefaultProvider(defaultOpenMevRpc || RPC_URL || JSON_RPC_URL);
 
 export enum Event {
   FEES_CHANGE = 'FEES_CHANGE',
