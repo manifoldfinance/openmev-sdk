@@ -1,0 +1,21 @@
+type EstimatedGasPrice {
+  confidence: Int
+  price: Int
+  maxPriorityFeePerGas: Float
+  maxFeePerGas: Float
+}
+type BlockPrice {
+  blockNumber: String
+  estimatedTransactionCount: Int
+  baseFeePerGas: Int
+  estimatedPrices: [EstimatedGasPrice]
+}
+type GasPrices {
+  system: String
+  network: String
+  unit: String
+  maxPrice: Int
+  currentBlockNumber: String
+  msSinceLastBlock: Int
+  blockPrices: [BlockPrice]
+}

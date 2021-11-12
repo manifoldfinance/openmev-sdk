@@ -1,0 +1,13 @@
+type SushiLiquidity {
+  id: Int
+  contractAddress: String
+  baseDecimals: Int
+  baseReserve: String
+  quoteDecimals: Int
+  quoteReserve: String
+  blockTimestamp: Int
+}
+type BlockSushiLiquidity {
+  blockNumber: String
+  liquidity: [SushiLiquidity]
+}

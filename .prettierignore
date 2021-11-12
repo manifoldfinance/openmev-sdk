@@ -10,3 +10,4 @@ types/
 docs/
 *.svg
 *.png
+*.graphql

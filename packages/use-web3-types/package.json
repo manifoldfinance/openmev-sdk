@@ -1,0 +1,54 @@
+{
+  "name": "use-web3-types",
+  "version": "0.4.0",
+  "description": "useReactWallet Typings",
+  "keywords": [
+    "react",
+    "typing",
+    "typescript",
+    "web3",
+    "ethereum"
+  ],
+  "author": "Manifold Finance, Inc",
+  "homepage": "https://github.com/manifoldfinance/openmev-sdk#readme",
+  "license": "Apache-2.0",
+  "directories": {
+    "src": "src",
+    "dist": "dist"
+  },
+  "type": "module",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    "import": "./dist/index.js"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/openmev-sdk/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^16",
+    "gts": "^3.1.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.0.3"
+  },
+  "peerDependencies": {
+    "zustand": "^3.6.1"
+  }
+}
