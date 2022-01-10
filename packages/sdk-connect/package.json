@@ -30,8 +30,7 @@
   },
   "scripts": {
     "test": "npx tsdx test",
-    "build": "npx tsdx build",
-    "prepublishOnly": "npx tsdx build"
+    "build": "npx tsdx build"
   },
   "bugs": {
     "url": "https://github.com/manifoldfinance/openmev-sdk/issues"
@@ -51,5 +50,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "d3da39fe919f115abe38dc84113f82357de2bdea"
+  "gitHead": "242f5811f1c49c8daed35bda8989eb8daf43a122"
 }
