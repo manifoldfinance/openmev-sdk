@@ -21,8 +21,7 @@
 - [Explore the new Developers Hub](https://manifoldfinance.github.io/hub/)
 - [See the Packages/ directory for additional specific docs](./packages/)
 
-## `use-react-wallet` - welltyped react hook with modern state management 
-
+## `use-react-wallet` - welltyped react hook with modern state management
 
 #### Connect / Disconnect button
 
@@ -92,8 +91,6 @@ const UserAddress = () => {
 | eth_callBundle     | `Array[String], A list of signed transactions to execute in an atomic bundle` | `false`  | `n/a`   | eth_callBundle can be used to simulate a bundle against a specific block number, including simulating a bundle at the top of the next block.                                          |
 | eth_sendBundle     | `() => string \| number \| string[] \| Record<string, unknown> \| undefined`  | `false`  | `n/a`   | SendBundle can be used to send your bundles to the relay.                                                                                                                             |
 
-
-
 ```
 * Git status:
 
@@ -116,6 +113,7 @@ const UserAddress = () => {
     Root                                     0.0.0          yes     N/A     0 (+ 11 dev)
 
 ```
+
 ## Changelog
 
 [Improvement Change Log](CHANGELOG.md)

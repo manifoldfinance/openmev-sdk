@@ -23,7 +23,9 @@ const tokenKey = `SESSION_TOKEN`;
  * @const getDefaultProvider
  * @
  */
-export const provider = getDefaultProvider(defaultOpenMevRpc || RPC_URL || JSON_RPC_URL);
+export const provider = getDefaultProvider(
+  defaultOpenMevRpc || RPC_URL || JSON_RPC_URL,
+);
 
 export enum Event {
   FEES_CHANGE = 'FEES_CHANGE',

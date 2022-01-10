@@ -5,12 +5,11 @@
  * @since 2021.10
  */
 
-
-import { baseFeeNextBlock } from './baseFeeNextBlock'
-import { buffer } from  './buffer'
-import { convertBytes32ToString } from './convertBytes32ToString'
-import { formatToDisplay }  from './formatToDisplay'
-import { transactionErrors } from './transactionErrors'
+import { baseFeeNextBlock } from './baseFeeNextBlock';
+import { buffer } from './buffer';
+import { convertBytes32ToString } from './convertBytes32ToString';
+import { formatToDisplay } from './formatToDisplay';
+import { transactionErrors } from './transactionErrors';
 
 export * from './baseFeeNextBlock';
 export * from './convertBytes32ToString';
@@ -20,4 +19,4 @@ export * from './transactionErrors';
 export * from './time';
 export * from './transactionErrors';
 
-export default sdkUtils
+export default sdkUtils;
