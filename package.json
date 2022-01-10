@@ -1,29 +1,23 @@
 {
   "name": "@openmev/openmev",
   "private": true,
-  "scripts": {
-    "build": "npx oao bootstrap",
-    "check": "npx oao status",
-    "lint": "npx prettier --config .prettierrc.json --write . "
-  },
+  "scripts": {},
   "version": "0.0.0",
   "workspaces": [
     "packages/*"
   ],
   "repository": "git@github.com:manifoldfinance/openmev-sdk.git",
   "author": "sam bacha <sam@manifoldfinance.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
+  "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.13.15",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/preset-env": "^7.13.15",
-    "@babel/preset-typescript": "^7.13.0",
-    "@babel/runtime": "^7.13.10",
-    "@microsoft/api-documenter": "^7.13.49",
-    "@microsoft/api-extractor": "^7.18.9",
-    "oao": "^2.0.2",
+    "@types/node": "^14",
+    "lerna": "^4.0.0",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
-    "typescript": "^4.2.4",
-    "webpack": "^5.52.1"
+    "tsdx": "^0.14.1",
+    "turbo": "^1.0.24",
+    "typescript": "4.2.x"
   }
 }

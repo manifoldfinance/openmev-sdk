@@ -1,0 +1,10 @@
+{
+  "name": "@openmev/types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "license": "Apache-2.0"
+}

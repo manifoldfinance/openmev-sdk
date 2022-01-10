@@ -1,6 +1,6 @@
 {
   "name": "@openmev/sdk-connect",
-  "version": "0.2.1",
+  "version": "0.5.0",
   "description": "OpenMEV RPC Connection Module for Multiple RPC Endpoints",
   "keywords": [
     "mev",
@@ -25,7 +25,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git"
+    "url": "git+https://github.com/manifoldfinance/openmev-sdk.git",
+    "directory": "packages/sdk-connect"
   },
   "scripts": {
     "test": "npx tsdx test",
@@ -49,5 +50,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "d3da39fe919f115abe38dc84113f82357de2bdea"
 }
