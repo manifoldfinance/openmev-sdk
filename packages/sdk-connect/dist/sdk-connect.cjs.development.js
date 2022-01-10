@@ -7,19 +7,12 @@ require('@ethersproject/providers');
 
 /**
  * @package OpenMevSocket
- * @version 0.2.0
+ * @version 0.4.0
  * @see docs.openmev.org
  */
-// import { defaultAbiCoder } from '@ethersproject/abi';
-
-/**
- * @configure JSON_RPC_URL is default
- * @configure RPC_URL for failover
- */
-
-var defaultServerUrl = 'https://api.sushirelay.com/v1';
 var RPC_URL = process.env.RPC_URL;
 var tokenKey = "SESSION_TOKEN";
+var defaultServerUrl = 'https://api.sushirelay.com/v1';
 var Event;
 
 (function (Event) {

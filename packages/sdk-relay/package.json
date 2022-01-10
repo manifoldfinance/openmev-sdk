@@ -9,12 +9,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "npm build:cjs && npm build:esm",
-    "build:cjs": "npx tse build src/index.ts --emit-types --ext .cjs.js",
-    "build:esm": "npx tse build src/index.ts --emit-types --ext .esm.js --output esm",
-    "lint": "npx tse lint .",
-    "test": "npx tse test --coverage",
-    "gen-index": "npx ctix create tsconfig.json"
+   "build": "yarn run tsdx build"
   },
   "keywords": [
     "ethereum",

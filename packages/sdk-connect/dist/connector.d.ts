@@ -1,4 +1,10 @@
+/**
+ * @package OpenMevSocket
+ * @version 0.4.0
+ * @see docs.openmev.org
+ */
 import { BigNumberish } from '@ethersproject/bignumber';
+export declare const defaultServerUrl = "https://api.sushirelay.com/v1";
 /**
  * @exports provider
  * @const getDefaultProvider
