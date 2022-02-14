@@ -7,6 +7,7 @@
 import { io, Socket } from 'socket.io-client';
 import { BigNumberish } from '@ethersproject/bignumber';
 import { getDefaultProvider } from '@ethersproject/providers';
+
 // import { hexDataLength, hexDataSlice, hexlify } from '@ethersproject/bytes'
 // import { defaultAbiCoder } from '@ethersproject/abi';
 /**
@@ -14,7 +15,7 @@ import { getDefaultProvider } from '@ethersproject/providers';
  * @configure RPC_URL for failover
  */
 const defaultOpenMevRpc = 'https://api.sushirelay.com/v1';
-const JSON_RPC_URL = 'https://api.staging.sushirelay.com/v1';
+const JSON_RPC_URL = 'https://api.sushirelay.com/v1';
 const RPC_URL = process.env.RPC_URL;
 const tokenKey = `SESSION_TOKEN`;
 

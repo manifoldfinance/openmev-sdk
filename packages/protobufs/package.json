@@ -8,7 +8,7 @@
   "author": "Manifold Finance, Inc <janitor@manifoldfinance.com>",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "build": "npm run build:typescript",
+    "build": "yarn run build:proto",
     "build:typescript": "npx tsc -p .",
     "watch": "npm run build:typescript -- -w",
     "build:proto": "npx proto-loader-gen-types --longs=String --enums=String --defaults --oneofs --grpcLib=@grpc/grpc-js --outDir=build/ src/*.proto",
