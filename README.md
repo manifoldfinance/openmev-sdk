@@ -16,15 +16,47 @@
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/14127676-2218bc61-1b7e-41af-824c-287c283f3548?action=collection%2Ffork&collection-url=entityId%3D14127676-2218bc61-1b7e-41af-824c-287c283f3548%26entityType%3Dcollection%26workspaceId%3D8cb582a0-5269-4437-bc39-67110c80bd4b)
 
-## Web3 Provider
-
-[https://github.com/manifoldfinance/openmev-provider](https://github.com/manifoldfinance/openmev-provider)
-
 ## Documentation
 
-> TODO
+- [Explore the new Developers Hub](https://manifoldfinance.github.io/hub/)
+- [See the Packages/ directory for additional specific docs](./packages/)
 
+## `use-react-wallet` - welltyped react hook with modern state management
 
+#### Connect / Disconnect button
+
+```ts
+const ConnectWalletButton = () => {
+  const { account, connect, disconnect } = useWallet();
+  return (
+    <>
+      {!account ? (
+        <button onClick={() => connect()}>Connect Wallet</button>
+      ) : (
+        <button onClick={() => disconnect()}>Disconnect Wallet</button>
+      )}
+    </>
+  );
+};
+```
+
+##### Connecting
+
+The `connect` function passes along an optional config to a
+[Web3Modal instance for additional customization](https://github.com/Web3Modal/web3modal#usage).
+
+You can use the account information from useWallet anywhere inside your React
+app, without any extra set up.
+
+```ts
+const UserAddress = () => {
+  const { account } = useWallet();
+  if (!account) return null;
+  return <>{account}</>;
+};
+```
+
+> For more packages, go to the sub directory
 
 ## Specification
 

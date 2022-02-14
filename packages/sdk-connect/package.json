@@ -1,6 +1,6 @@
 {
   "name": "@openmev/sdk-connect",
-  "version": "0.7.0",
+  "version": "0.5.0",
   "description": "OpenMEV RPC Connection Module for Multiple RPC Endpoints",
   "keywords": [
     "mev",
@@ -50,5 +50,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "242f5811f1c49c8daed35bda8989eb8daf43a122"
+  "gitHead": "d3da39fe919f115abe38dc84113f82357de2bdea"
 }
